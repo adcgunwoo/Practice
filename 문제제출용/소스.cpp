@@ -4,9 +4,11 @@
 int main()
 {
 
-	printf("수를 출력할 때는 따옴표를 생략합니다.\n");
-	printf("123\n");
-	printf("6.500000");
+	printf(" %s\n","subject score");
+	printf("==============\n");
+	printf("  %s    %d\n","korean", 90);
+	printf(" %s   %d\n", "english",100);
+	printf("%s    %d\n", "computer", 80);
 
 	return 0;
 
