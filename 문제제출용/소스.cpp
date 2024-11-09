@@ -4,11 +4,11 @@
 int main()
 {
 
-	printf(" %s\n","subject score");
+	printf("%8s%6s\n","subject","score");
 	printf("==============\n");
-	printf("  %s    %d\n","korean", 90);
-	printf(" %s   %d\n", "english",100);
-	printf("%s    %d\n", "computer", 80);
+	printf("%8s%6d\n","korean", 90);
+	printf("%8s%6d\n","english",100);
+	printf("%8s%6d\n","computer", 80);
 
 	return 0;
 
