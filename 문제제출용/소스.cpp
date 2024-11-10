@@ -4,13 +4,16 @@
 int main()
 {
 
-	int a, b;
+	int a;
+	double b;
 
-	a = -1;
-	b = 100;
+	a = 5;
+	b = 3.140000;
 
-	printf("%d\n%d",a,b);
-	
+	printf("%s = %d * %d * %lf = %lf\n", "¿øÁÖ",a, 2, b, a * 2 * b);
+	printf("%s = %d * %d * %lf = %lf\n", "³ĞÀÌ",a, a, b, a * a * b);
+
+
 	return 0;
 
 }
