@@ -3,12 +3,14 @@
 
 int main()
 {
-	int a;
+	int a,b,c;
 
-	scanf("%d", &a);
+	scanf("%d %d", &a, &b);
 
-	printf("%d\n", a++);
-	printf("%d", ++a);
+	a = ++a;
+	c = a + b--;
 
+	printf("a = %d, b = %d, c = %d", a, b, c);
+	
 	return 0;
 }
