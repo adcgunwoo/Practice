@@ -3,11 +3,12 @@
 
 int main()
 {
-	int a;
+	int a,b;
 
-	printf("당신의 나이는 몇 살입니까? ");
-	scanf("%d", &a);
-	printf("당신의 나이는 %d살이군요.", a);
+	printf("두 수를 입력하시오. ");
+	scanf("%d %d", &a,&b);
+	printf("%d + %d = %d\n",a,b,a+b);
+	printf("%d * %d = %d\n", a, b, a * b);
 	
 	return 0;
 
