@@ -4,15 +4,17 @@
 int main()
 {
 
-	int a;
-	double b;
+	double x, y;
 
-	a = 5;
-	b = 3.140000;
+	x = 1.2340;
+	y = 10.3459;
 
-	printf("%s = %d * %d * %lf = %lf\n", "원주",a, 2, b, a * 2 * b);
-	printf("%s = %d * %d * %lf = %lf\n", "넓이",a, a, b, a * a * b);
-
+	printf("전체 7자리로 맞추고 소수 4자리까지 출력\n");
+	printf("%c = %7.4lf\n", 'x', x);
+	printf("%c = %7.4lf\n\n", 'y', y);
+	printf("소수 2자리까지 출력(반올림)\n");
+	printf("%c = %.2lf\n", 'x', x);
+	printf("%c = %.2lf\n", 'y', y);
 
 	return 0;
 
