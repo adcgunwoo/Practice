@@ -3,11 +3,14 @@
 
 int main()
 {
-	int a, b, c, d, e;
+	int a,b;
+	a = 10, b = 10;
 
-	printf("5개의 수를 입력하시오. ");
-	scanf("%d %d %d %d %d", &a, &b, &c, &d, &e);
-	printf("%d %d %d %d %d", a + 3, b - 3, c * 3, d / 3, e % 3);
+	printf("최초값 a = %d, b = %d\n\n", a,b);
+	printf("a++ = %d, ++b = %d\n", a++, ++b);
+	printf("실행후 a = %d, b = %d\n\n", a, b);
+	printf("a-- = %d, --b = %d\n", a--, --b);
+	printf("실행후 a = %d, b = %d", a, b);
 
 
 	return 0;
