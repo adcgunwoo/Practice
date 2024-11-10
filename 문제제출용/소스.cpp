@@ -3,14 +3,12 @@
 
 int main()
 {
+	int a;
 
-	double x, y;
-
-	x = 91.44;
-	y = 2.54;
-
-	printf("%4.1lf%s = %5.1lf%s\n", 2.1,"yd", 2.1*x,"cm");
-	printf("%4.1lf%s = %5.1lf%s\n", 10.5, "in", 10.5 * y, "cm");
+	printf("당신의 나이는 몇 살입니까? ");
+	scanf("%d", &a);
+	printf("당신의 나이는 %d살이군요.", a);
+	
 	return 0;
 
 }
