@@ -6,16 +6,11 @@ int main()
 
 	double x, y;
 
-	x = 1.2340;
-	y = 10.3459;
+	x = 91.44;
+	y = 2.54;
 
-	printf("전체 7자리로 맞추고 소수 4자리까지 출력\n");
-	printf("%c = %7.4lf\n", 'x', x);
-	printf("%c = %7.4lf\n\n", 'y', y);
-	printf("소수 2자리까지 출력(반올림)\n");
-	printf("%c = %.2lf\n", 'x', x);
-	printf("%c = %.2lf\n", 'y', y);
-
+	printf("%4.1lf%s = %5.1lf%s\n", 2.1,"yd", 2.1*x,"cm");
+	printf("%4.1lf%s = %5.1lf%s\n", 10.5, "in", 10.5 * y, "cm");
 	return 0;
 
 }
