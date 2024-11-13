@@ -3,19 +3,17 @@
 
 int main()
 {
-	int a, b;
+	int a, b, c;
 	int result1, result2, result3, result4;
-	scanf("%d %d", &a, &b);
 
-	result1 = a > b;
-	result2 = a < b;
-	result3 = a >= b;
-	result4 = a <= b;
+	a = 0, b = 1, c = 2;
 
-	printf("%d > %d --- %d\n", a, b, a > b);
-	printf("%d < %d --- %d\n", a, b, a < b);
-	printf("%d >= %d --- %d\n", a, b, a >= b);
-	printf("%d <= %d --- %d", a, b, a <= b);
-	
+	result1 = (a && b);
+	result2 = (a || b);
+	result3 = (b && c);
+	result4 = (!a);
+
+	printf("%d %d %d %d", result1, result2, result3, result4);
+
 	return 0;
 }
