@@ -3,17 +3,15 @@
 
 int main()
 {
-	int a, b, c;
+	int a, b;
 	int result1, result2, result3, result4;
 
-	a = 0, b = 1, c = 2;
+	scanf("%d %d", &a, &b);
 
 	result1 = (a && b);
 	result2 = (a || b);
-	result3 = (b && c);
-	result4 = (!a);
 
-	printf("%d %d %d %d", result1, result2, result3, result4);
+	printf("%d %d", result1, result2);
 
 	return 0;
 }
