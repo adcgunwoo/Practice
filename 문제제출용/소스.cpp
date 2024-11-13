@@ -2,13 +2,20 @@
 #include <stdio.h>
 int main()
 {
-	int a;
+	int a, b,c;
 
-	scanf("%d", &a);
-	printf("%d\n", a);
-	if (a > 10) {
-		printf("10보다 큰 수를 입력하셨습니다.");
+	scanf("%d %d", &a,&b);
+	
+	if (a < b) {
+		c = a;
+		a = b;
+		b = c;
 	}
+
+	printf("입력받은 수 중 큰 수는 %d이고 작은 수는 %d입니다.", a, b);
+
+
+
 
 	return 0;
 }
