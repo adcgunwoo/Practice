@@ -1,12 +1,17 @@
 #define _crt_no_secure_warnings
 #include <stdio.h>
-
+#include <time.h> // 시간 함수
 int main()
 {
-	int a = 5; // 디버깅에서 아직 입력 X (쓰레기값)
-	a += 10; // 디버깅에서 a의 값 5
-	a = a - 1; //디버깅에서 a의 값 15
-	printf("%d\n", 15); 
+	int a = 0;
+	time_t now;
+	struct tm tt;
+	time(&now);
+	tt = *localtime(&now);
+	a = tt.tm_year; // 1
+	a += tt.tm_mon; // 2
+	a += tt.tm_mday;
+	printf("%d %d %d\n", 0,124,147); // 3
 
 
 	return 0;
