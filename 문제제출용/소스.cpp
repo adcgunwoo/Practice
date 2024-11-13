@@ -1,17 +1,22 @@
-#define _crt_no_secure_warning
+#define _crt_no_secure_warnings
 #include <stdio.h>
 
 int main()
 {
-	int a, b;
-	int result1, result2, result3, result4;
+	double a, b; //실수형 변수
+	int d, e;
+	
+	scanf("%lf %lf", &a, &b);
 
-	scanf("%d %d", &a, &b);
+	d = a + b;
 
-	result1 = (a && b);
-	result2 = (a || b);
+	int f, g;
+	f = int(a);
+	g = int(b);
 
-	printf("%d %d", result1, result2);
+	e = f + g;
+	printf("%d %d", d, e);
+
 
 	return 0;
 }
