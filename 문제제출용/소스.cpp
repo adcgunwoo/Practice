@@ -2,25 +2,23 @@
 #include <stdio.h>
 int main()
 {
-	int a;
+	double a;
+	scanf("%lf", &a);
 
-	printf("점수를 입력하세요. ");
-	scanf("%d", &a);
-
-	if (a >= 90) {
-		printf("A");
+	if (a > 88.45) {
+		printf("Heavyweight");
 	}
-	else if (a>=80) {
-		printf("B");
+	else if (a>72.57 && a <= 88.45) {
+		printf("Cruiserweight");
 	}
-	else if (a >= 70) {
-		printf("C");
+	else if (a>61.23 && a <= 72.57) {
+		printf("Middleweight");
 	}
-	else if (a >= 60) {
-		printf("D");
+	else if (a>50.80 && a <= 61.23) {
+		printf("Lightweight");
 	}
-	else {
-		printf("F");
+	else if (a<=50.8) {
+		printf("Flyweight");
 	}
 	
 	return 0;
