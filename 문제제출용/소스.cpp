@@ -2,20 +2,26 @@
 #include <stdio.h>
 int main()
 {
-	int a, b,c;
+	int a;
 
-	scanf("%d %d", &a,&b);
-	
-	if (a < b) {
-		c = a;
-		a = b;
-		b = c;
+	printf("점수를 입력하세요. ");
+	scanf("%d", &a);
+
+	if (a >= 90) {
+		printf("A");
 	}
-
-	printf("입력받은 수 중 큰 수는 %d이고 작은 수는 %d입니다.", a, b);
-
-
-
-
+	else if (a>=80) {
+		printf("B");
+	}
+	else if (a >= 70) {
+		printf("C");
+	}
+	else if (a >= 60) {
+		printf("D");
+	}
+	else {
+		printf("F");
+	}
+	
 	return 0;
 }
