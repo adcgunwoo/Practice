@@ -3,25 +3,28 @@
 int main()
 {
 	int a;
-	char male;
+	printf("점수를 입력하세요. ");
+	scanf("%d", &a);
 
-	scanf("%c %d", &male, &a);
-	if (male == 'M') {
-		if (a >= 18) {
-			printf("MAN");
-		}
-		else {
-			printf("BOY");
-		}
+	switch (a / 10) 
+	{
+	case 10:
+	case 9:
+		printf("A");
+		break;
+	case 8:
+		printf("B");
+		break;
+	case 7:
+		printf("C");
+		break;
+	case 6:
+		printf("D");
+		break;
+	default:
+		printf("F");
+		break;
 	}
-	else {
-		if(a>=18) {
-			printf("WOMAN");
-		}
-		else {
-			printf("GIRL");
-		}
-	}
-
+	
 	return 0;
 }
