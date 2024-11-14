@@ -2,24 +2,19 @@
 #include <stdio.h>
 int main()
 {
-	int a;
-	int cnt = 0,sum=0;
-	double avg=0;
-
-	while (1) {
+	int a,avg;
+	int cnt = 0, sum = 0;
+	
+	do {
 		scanf("%d", &a);
-		if (a == 0) {
-			printf("입력된 자료의 개수 = %d\n", cnt);
-			printf("입력된 자료의 합계 = %d\n", sum);
-			printf("입력된 자료의 평균 = %.2lf\n", avg);
-			break;
+		if (a % 2 != 0) {
+			sum += a;
+			cnt++;
 		}
-		cnt++;
-		sum += a;
-		avg = sum / double(cnt);
-	}
-
-
+	} while (a != 0);
+	avg = sum/cnt;
+	printf("홀수의 합 = %d\n", sum);
+	printf("홀수의 평균 = %d", avg);
 
 	return 0;
 }
