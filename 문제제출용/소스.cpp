@@ -2,21 +2,24 @@
 #include <stdio.h>
 int main()
 {
-	int score;
+	int a;
+	int cnt = 0,sum=0;
+	double avg=0;
+
 	while (1) {
-		printf("점수를 입력하세요. ");
-		scanf("%d", &score);
-		if (score >= 80 && score <=100) {
-			printf("축하합니다. 합격입니다.\n");
-		}
-		else if (score >= 0 && score < 80) {
-			printf("죄송합니다. 불합격입니다.\n");
-		}
-		else {
+		scanf("%d", &a);
+		if (a == 0) {
+			printf("입력된 자료의 개수 = %d\n", cnt);
+			printf("입력된 자료의 합계 = %d\n", sum);
+			printf("입력된 자료의 평균 = %.2lf\n", avg);
 			break;
 		}
+		cnt++;
+		sum += a;
+		avg = sum / double(cnt);
 	}
-	
+
+
 
 	return 0;
 }
