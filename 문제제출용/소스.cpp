@@ -2,14 +2,18 @@
 #include <stdio.h>
 int main()
 {
-	int i,j;
-	
-	for (i = 1; i <= 9; i++) {
-		for (j = 2; j <= 4; j++) {
-			printf("%d * %d = %2d   ", j,i,j*i);
-		}
-		printf("\n");
+	int i,j,n,m;
+	int sum = 0;
+	double avg;
+	scanf("%d", &n);
+
+	for (i = 1; i <= n; i++) {
+		scanf("%d", &m);
+		sum += m;
 	}
+	avg = double(sum) / n;
+
+	printf("%.2lf", avg);
 
 	return 0;
 }
