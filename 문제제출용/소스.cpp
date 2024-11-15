@@ -2,11 +2,10 @@
 #include <stdio.h>
 int main()
 {
-	int i,a;
-	scanf("%d", &a);
-
-	for (i = 1; i <= a; i++) {
-		printf("C언어 프로그래밍\n");
+	int i;
+	
+	for (i = 1; i <= 20; i+=2) {
+		printf("%d ", i);
 	}
 
 	return 0;
