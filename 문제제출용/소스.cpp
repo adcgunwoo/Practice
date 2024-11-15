@@ -2,11 +2,17 @@
 #include <stdio.h>
 int main()
 {
-	int i;
-	
-	for (i = 1; i <= 20; i+=2) {
-		printf("%d ", i);
+	int i,a;
+
+	int cnt = 0;
+
+	for (i = 1; i <= 10; i++) {
+		scanf("%d", &a);
+		if (a % 2 == 0) {
+			cnt++;
+		}
 	}
+	printf("입력받은 짝수는 %d개입니다.", cnt);
 
 	return 0;
 }
