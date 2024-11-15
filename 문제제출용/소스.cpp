@@ -4,15 +4,23 @@ int main()
 {
 	int i,a;
 
-	int cnt = 0;
+	int cnt3 = 0,cnt5=0;
 
 	for (i = 1; i <= 10; i++) {
 		scanf("%d", &a);
-		if (a % 2 == 0) {
-			cnt++;
+		if (a % 15 == 0) {
+			cnt3++;
+			cnt5++;
+		}
+		else if (a % 3 == 0) {
+			cnt3++;
+		}
+		else if (a % 5 == 0) {
+			cnt5++;
 		}
 	}
-	printf("입력받은 짝수는 %d개입니다.", cnt);
+	printf("Multiples of 3 : %d\n", cnt3);
+	printf("Multiples of 5 : %d\n", cnt5);
 
 	return 0;
 }
