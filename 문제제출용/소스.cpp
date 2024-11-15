@@ -2,22 +2,11 @@
 #include <stdio.h>
 int main()
 {
-	int a, b;
-	double area;
-	char trial;
+	int i,a;
+	scanf("%d", &a);
 
-	while (1) {
-		printf("Base = ");
-		scanf("%d", &a);
-		printf("Height = ");
-		scanf("%d", &b);
-		area = a * b / 2.0;
-		printf("Triangle width = %.1lf\n", area);
-		printf("Continue? ");
-		scanf(" %c", &trial);
-		if (trial != 'Y' && trial != 'y') {
-			break;
-		}
+	for (i = 1; i <= a; i++) {
+		printf("C언어 프로그래밍\n");
 	}
 
 	return 0;
