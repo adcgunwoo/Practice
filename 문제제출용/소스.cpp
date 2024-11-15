@@ -3,15 +3,9 @@
 int main()
 {
 	int i,j, n;
-	for (i = 1; i <= 5; i++) {
-		for (j = 1; j <= 5; j++) {
-			printf("%d ", i);
-		}
-		printf("\n");
-	}
-	printf("\n");
-	for (i = 1; i <= 5; i++) {
-		for (j = 1; j <= 5; j++) {
+	
+	for (i = 2; i <= 6; i++) {
+		for (j = i; j <= i+4; j++) {
 			printf("%d ", j);
 		}
 		printf("\n");
