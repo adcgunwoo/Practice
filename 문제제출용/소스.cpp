@@ -2,17 +2,28 @@
 #include <stdio.h>
 int main()
 {
-	int n, i,j;
+	int i, j,a,b;
 
-	scanf("%d",&n);
+	scanf("%d %d", &a, &b);
 
-	for (i = 1; i <= n; i++) {
-		for (j = 1; j <= n; j++) {
-			printf("(%d, %d) ", i, j);
+
+	if (a > b) {
+		for (j = 1; j <= 9; j++) {
+			for (i = a; i >= b; i--) {
+				printf("%d * %d = %2d   ", i, j, i * j);
+			}
+			printf("\n");
 		}
-		printf("\n");
 	}
-	
+
+	else {
+		for (j = 1; j <= 9; j++) {
+			for (i = a; i <= b; i++) {
+				printf("%d * %d = %2d   ", i, j, i * j);
+			}
+			printf("\n");
+		}
+	}
 
 	return 0;
 }
