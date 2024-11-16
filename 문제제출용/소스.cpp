@@ -2,18 +2,28 @@
 #include <stdio.h>
 int main()
 {
-	int i,j,n,m;
-	int sum = 0;
-	double avg;
-	scanf("%d", &n);
+	int i,a,b;
+	int sum = 0,cnt=0;
+	double avg = 0;
 
-	for (i = 1; i <= n; i++) {
-		scanf("%d", &m);
-		sum += m;
+	scanf("%d %d", &a, &b);
+
+	if (a > b) {
+		int c = a;
+		a = b;
+		b = c;
 	}
-	avg = double(sum) / n;
 
-	printf("%.2lf", avg);
+	for (i = a; i <= b; i++) {
+		if (i% 3 == 0 || i % 5 == 0) {
+			sum += i;
+			cnt++;
+			avg = double(sum) / cnt;
+		}
+	}
+	printf("sum : %d\n", sum);
+	printf("avg : %.1lf\n", avg);
+
 
 	return 0;
 }
