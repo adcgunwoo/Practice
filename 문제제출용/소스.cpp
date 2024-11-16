@@ -2,18 +2,13 @@
 #include <stdio.h>
 int main()
 {
-	int i,sum=0, j,a,odd_cnt=0;
-	scanf("%d", &a);
+	int i, j;
 
-	for (i = 1;; i++) {
-		if (i % 2 != 0) {
-			if (sum >= a) {
-				printf("%d %d", odd_cnt, sum);
-				break;
-			}
-			sum += i;
-			odd_cnt++;
+	for (i = 1; i <= 3; i++) {
+		for (j = 1; j <= i; j++) {
+			printf("*");
 		}
+		printf("\n");
 	}
 
 	return 0;
