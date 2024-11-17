@@ -4,11 +4,11 @@ int main()
 {
 	int a, i, j, k;
 
-	for (i = 1; i <= 5; i++) {
-		for (j = i; j < 5; j++) {
+	for (i = 4,j=1; i >= 0; i--,j+=2) {
+		for (k = 1; k <= i; k++) {
 			printf(" ");
 		}
-		for (j = 1; j <= 2*i-1; j++) {
+		for (k = 1; k <= j; k++) {
 			printf("*");
 		}
 		printf("\n");
