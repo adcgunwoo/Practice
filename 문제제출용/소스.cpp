@@ -2,27 +2,20 @@
 #include <stdio.h>
 int main()
 {
-	int i,j,a;
-
+	int i, j, a,num=1;
 	scanf("%d", &a);
 
-	for (i = a; i >= 1; i--) {
-		for (j = i; j < a; j++) {
-			printf(" ");
-		}
-		for (j = 2*i-1; j >= 1; j--) {
-			printf("*");
-		}
-		printf("\n");
-	}
+	
 
-	for (i = 1; i < a; i++) {
-		for (j = i+1; j < a; j++) {
+	for (i = 1; i <= a; i++) {
+		for (j = -2*i+2*a; j >= 1; j--) {
 			printf(" ");
 		}
-		for (j = 1; j <= 2 * i + 1; j++) {
-			printf("*");
-		}	
+		for (j = 1; j <= i; j++) {
+			printf("%d ", num);
+			num += 1;
+		}
+		num = 1;
 		printf("\n");
 	}
 
