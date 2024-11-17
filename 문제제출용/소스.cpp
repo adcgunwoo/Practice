@@ -2,19 +2,18 @@
 #include <stdio.h>
 int main()
 {
-	int i, j, a;
-	int sum = 0, cnt = 0;
-	int avg;
+	int i,j,a;
 
-	for (i = 1; i <= 20; i++) {
-		scanf("%d", &a);
-		if (a == 0) {
-			break;	
+	scanf("%d", &a);
+
+	for (i = 1; i <= 100; i++) {
+		printf("%d ", a * i);
+		int base = a * i;
+		if (base % 10 == 0) {
+			break;
 		}
-		sum += a;
-		cnt++;	
 	}
-	avg = sum / cnt;
-	printf("%d %d", sum, avg);
+
+
 	return 0;
 }
