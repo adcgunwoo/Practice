@@ -2,21 +2,20 @@
 #include <stdio.h>
 int main()
 {
-	int a, i, j, k;
-	scanf("%d", &a);
-	
-	for (i = a; i >= 1; i--) {
-		for (j = i; j < a; j++) {
-			printf(" ");
+	int i, j, a;
+
+	int num = 1;
+	char alpha = 'A';
+
+	for (i = 1; i <= 4; i++) {
+		for (j = 1; j <= i; j++) {
+			printf("%c ", alpha++);
 		}
-		for (j = 2*i-1; j >=1; j--) {
-			printf("*");
+		for (j = 4; j >= i; j--) {
+			printf("%d ", num++);
 		}
 		printf("\n");
 	}
-
-
-	 
 
 	return 0;
 }
