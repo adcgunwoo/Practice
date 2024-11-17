@@ -3,16 +3,20 @@
 int main()
 {
 	int a, i, j, k;
-
-	for (i = 4,j=1; i >= 0; i--,j+=2) {
-		for (k = 1; k <= i; k++) {
+	scanf("%d", &a);
+	
+	for (i = a; i >= 1; i--) {
+		for (j = i; j < a; j++) {
 			printf(" ");
 		}
-		for (k = 1; k <= j; k++) {
+		for (j = 2*i-1; j >=1; j--) {
 			printf("*");
 		}
 		printf("\n");
-	} //연습문제 5-1
+	}
+
+
+	 
 
 	return 0;
 }
