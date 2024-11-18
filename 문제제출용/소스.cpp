@@ -3,14 +3,15 @@
 int main()
 {
 	int i;
-	char a[10];
-
-	for (i = 0; i < 10; i++) {
-		scanf(" %c", &a[i]); //문자를 입력받을 때 무조건 %c앞에 공백!
+	char a[26],alpha='A';
+	for (i = 0; i < 26; i++) {
+		a[i] = alpha++;
+		//a[i]='A' + i 의 형태로도 작성 가능
 	}
-	for (i = 0; i < 10; i++) {
-		printf("%c", a[i]);
+	for (i = 25; i >= 0; i--) {
+		printf("%c ", a[i]);
 	}
+	
 	
 
 	return 0;
