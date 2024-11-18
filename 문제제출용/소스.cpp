@@ -3,20 +3,21 @@
 
 int main()
 {
-	int i,a[10], max=1, min=10000;
+	int c, i, j, a[5]={95,75,85,100,50};
 
-	for (i = 0; i < 10; i++) {
-		scanf("%d", &a[i]);
-		if (a[i] >= 100) {
-			if (a[i] < min) {
-				min = a[i];
-			}	
-		}
-		else if (a[i] > max) {
-				max = a[i];
+	for (i = 0; i < 4; i++) {
+		for (j = i + 1; j < 5; j++) {
+			if (a[i] > a[j]) {
+				c = a[i];
+				a[i] = a[j];
+				a[j] = c;
+			}
 		}
 	}
 
-	printf("%d %d", max, min);
+	for (i = 0; i < 5; i++) {
+		printf("%d ", a[i]);
+	}
+
 	return 0;
 }
