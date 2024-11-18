@@ -2,16 +2,14 @@
 #include <stdio.h>
 int main()
 {
-	int i, j, a,num=0;
+	int i, j, a,num=1;
 	scanf("%d", &a);
 
-	char alpha = 'A';
-
 	for (i = 1; i <= a; i++) {
-		for (j = a; j >= i; j--) {
-			printf("%c ", alpha++);
-		}
 		for (j = 1; j < i; j++) {
+			printf("  "); //공백이 2개
+		}
+		for (j = i; j <= a; j++) {
 			printf("%d ", num++);
 		}
 		printf("\n");
