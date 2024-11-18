@@ -4,8 +4,12 @@ int main()
 {
 	int i, a[5];
 
-	scanf("%d %d %d %d %d", &a[0], &a[1], &a[2], &a[3], &a[4]);
-	printf("%d %d %d %d %d", a[0], a[1], a[2], a[3], a[4], a[5]);
-	
+	for (i = 0; i < 5; i++) {
+		scanf("%d", &a[i]);
+	}
+	for (i = 0; i < 5; i++) {
+		printf("%d ", a[i]);
+	}
+
 	return 0;
 }
