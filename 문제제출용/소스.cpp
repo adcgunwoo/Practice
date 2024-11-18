@@ -2,14 +2,16 @@
 #include <stdio.h>
 int main()
 {
-	int i, a[5];
+	int i;
+	char a[10];
 
-	for (i = 0; i < 5; i++) {
-		scanf("%d", &a[i]);
+	for (i = 0; i < 10; i++) {
+		scanf(" %c", &a[i]); //문자를 입력받을 때 무조건 %c앞에 공백!
 	}
-	for (i = 0; i < 5; i++) {
-		printf("%d ", a[i]);
+	for (i = 0; i < 10; i++) {
+		printf("%c", a[i]);
 	}
+	
 
 	return 0;
 }
