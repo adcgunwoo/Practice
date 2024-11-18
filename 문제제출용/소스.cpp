@@ -2,12 +2,21 @@
 #include <stdio.h>
 int main()
 {
-	int i,a[10];
-	
-	for (i = 0; i < 10; i++) {
+	int i,j;
+	char a[100];
+
+	for (i = 0; i < 100; i++) {
 		scanf("%d", &a[i]);
+		if (a[i] == 0) {
+			break;
+		}
 	}
-	printf("%d %d %d", a[2], a[4], a[9]);
+	j = i;
+	for (i = 0; i < j; i++) {
+		if (i % 2 != 0) {
+			printf("%d ", a[i]);
+		}
+	}
 
 	return 0;
 }
