@@ -2,20 +2,18 @@
 #include <stdio.h>
 int main()
 {
-	int i, j, a,num=1;
+	int i, j, a,num=0;
 	scanf("%d", &a);
 
-	
+	char alpha = 'A';
 
 	for (i = 1; i <= a; i++) {
-		for (j = -2*i+2*a; j >= 1; j--) {
-			printf(" ");
+		for (j = a; j >= i; j--) {
+			printf("%c ", alpha++);
 		}
-		for (j = 1; j <= i; j++) {
-			printf("%d ", num);
-			num += 1;
+		for (j = 1; j < i; j++) {
+			printf("%d ", num++);
 		}
-		num = 1;
 		printf("\n");
 	}
 
