@@ -2,16 +2,16 @@
 #include <stdio.h>
 int main()
 {
-	int i, max=0, a[10];
+	int i, min, a[10];
 
-
+	min = 1001;
 	for (i = 0; i < 10; i++) {
 		scanf("%d", &a[i]);
-		if (a[i] > max) {
-			max = a[i];
+		
+		if (a[i] < min) {
+			min = a[i];
 		}
 	}
-	printf("%d", max);
-
+	printf("%d", min);
 	return 0;
 }
