@@ -3,23 +3,20 @@
 
 int main()
 {
-	int i,a[10],even_max=0,odd_min=0;
+	int i,a[10], max=1, min=10000;
 
 	for (i = 0; i < 10; i++) {
 		scanf("%d", &a[i]);
-		if (a[i] % 2 == 0) {
-			if (a[i] > even_max) {
-				even_max = a[i];
-			}
+		if (a[i] >= 100) {
+			if (a[i] < min) {
+				min = a[i];
+			}	
 		}
-		else if (a[i] % 2 != 0) {
-			if (a[i] < odd_min) {
-				odd_min = a[i];
-			}
+		else if (a[i] > max) {
+				max = a[i];
 		}
 	}
 
-	printf("%d %d", odd_min, even_max);
-
+	printf("%d %d", max, min);
 	return 0;
 }
