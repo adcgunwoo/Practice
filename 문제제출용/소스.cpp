@@ -2,20 +2,33 @@
 #include <stdio.h>
 int main()
 {
-	int i,j;
-	char a[100];
+	int i, j,year,month;
+	int days[13] = { 0,31,28,31,30,31,30,31,31,30,31,30,31 }; 
 
-	for (i = 0; i < 100; i++) {
-		scanf("%d", &a[i]);
-		if (a[i] == 0) {
+	while (1) {
+		printf("YEAR = ");
+		scanf("%d", &year);
+		printf("MONTH = ");
+		scanf("%d", &month);
+		if (month == 0) {
 			break;
 		}
-	}
-	j = i;
-	for (i = 0; i < j; i++) {
-		if (i % 2 != 0) {
-			printf("%d ", a[i]);
+		else if (month > 12 || month < 1) {
+			printf("잘못 입력하였습니다.\n");
 		}
+		else if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
+			if (month == 2) {
+				printf("입력하신 달의 날 수는 29일입니다.\n");
+			}
+			else {
+				printf("입력하신 달의 날 수는 %d일입니다.\n", days[month]);
+			}
+		}
+	
+		else {
+			printf("입력하신 달의 날 수는 %d일입니다.\n", days[month]);
+		}
+		printf("\n");
 	}
 
 	return 0;
