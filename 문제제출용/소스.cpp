@@ -2,14 +2,16 @@
 #include <stdio.h>
 int main()
 {
-	int i,a,b;
-	double sum=0,avg[6] = { 85.6,79.5,83.1,80.0,78.2,75.0 };
-	
+	int i, max=0, a[10];
 
-	scanf("%d %d", &a, &b);
-	sum = avg[a - 1] + avg[ b - 1 ];
 
-	printf("%.1lf", sum);
+	for (i = 0; i < 10; i++) {
+		scanf("%d", &a[i]);
+		if (a[i] > max) {
+			max = a[i];
+		}
+	}
+	printf("%d", max);
 
 	return 0;
 }
