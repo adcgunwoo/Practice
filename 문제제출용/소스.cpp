@@ -3,19 +3,23 @@
 
 int main()
 {
-	int c, i, j, a[5]={95,75,85,100,50};
+	int i, j,a[10],tmp;
 
-	for (i = 0; i < 4; i++) {
-		for (j = i + 1; j < 5; j++) {
-			if (a[i] > a[j]) {
-				c = a[i];
+	for (i = 0; i < 10; i++) {
+		scanf("%d", &a[i]);
+	}
+
+	for (i = 0; i < 9; i++) {
+		for (j = i + 1; j < 10; j++) {
+			if (a[i] < a[j]) {
+				tmp = a[i];
 				a[i] = a[j];
-				a[j] = c;
+				a[j] = tmp;
 			}
 		}
 	}
 
-	for (i = 0; i < 5; i++) {
+	for (i = 0; i < 10; i++) {
 		printf("%d ", a[i]);
 	}
 
