@@ -3,26 +3,25 @@
 
 int main()
 {
-	int i, j,a[5],tmp;
+	int i,j,a[100],cnt=0;
 
-	for (i = 0; i < 5; i++) {
+	for (i = 0; i < 100; i++) {
 		scanf("%d", &a[i]);
-	}
-	for (i = 0; i < 4; i++) {
-		tmp = a[i + 1]; //시작점이 되는 값 또는 Key값
-		for (j = i; j > -1; j--) {
-			if (a[j] > tmp) {
-				a[j + 1] = a[j];
-			}
-			else {
-				break;
-			}
+		if (a[i] == -1) {
+			break;
 		}
-		a[j + 1] = tmp;
+		cnt++;
 	}
-	
-	for (i = 0; i < 5; i++) {
-		printf("%d ", a[i]);
+
+	if (cnt > 3) {
+		for (i = cnt - 3; i < cnt; i++) {
+			printf("%d ", a[i]);
+		}
+	}
+	else {
+		for (i = 0; i < cnt; i++) {
+			printf("%d ", a[i]);
+		}
 	}
 
 	return 0;
