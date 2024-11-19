@@ -3,25 +3,18 @@
 
 int main()
 {
-	int i,j,a[100],cnt=0;
-
-	for (i = 0; i < 100; i++) {
-		scanf("%d", &a[i]);
-		if (a[i] == -1) {
+	int i=0;
+	char a[6] = { 'J','U','N','G','O','L'},alpha;
+	scanf(" %c", &alpha);
+	
+	for (i = 0; i < 6; i++) {
+		if (alpha == a[i]) {
+			printf("%d", i);
 			break;
 		}
-		cnt++;
 	}
-
-	if (cnt > 3) {
-		for (i = cnt - 3; i < cnt; i++) {
-			printf("%d ", a[i]);
-		}
-	}
-	else {
-		for (i = 0; i < cnt; i++) {
-			printf("%d ", a[i]);
-		}
+	if (i > 5) {
+		printf("none");
 	}
 
 	return 0;
