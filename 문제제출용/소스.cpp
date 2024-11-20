@@ -3,20 +3,21 @@
 
 int main()
 {
-	int i, j, a[100],cnt[10]={0},tmp=0;
+	int i, a,cnt[10]={0};
 
-	for (i = 0; i < 100; i++) {
-		scanf("%d", &a[i]);
-		if (a[i] == 0) {
+	while (1) {
+		scanf("%d", &a);
+		if (a == 0) {
 			break;
 		}
-		cnt[a[i]%10]++;
-		tmp++;
+		else {
+			cnt[a / 10]++;
+		}
 	}
 
-	for (i = 0; i < tmp; i++) {
-		if (cnt[i] > 0) {
-			printf("%d : %d°³\n", i, cnt[i]);
+	for (i = 0; i < 10; i++) {
+		if (cnt[i] != 0) {
+			printf("%d : %d\n", i, cnt[i]);
 		}
 	}
 
