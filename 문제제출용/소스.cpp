@@ -3,23 +3,17 @@
 
 int main()
 {
-	int i, a,cnt[10]={0};
+	int i, fibo[100]={0,1,1,};
 
-	while (1) {
-		scanf("%d", &a);
-		if (a == 0) {
-			break;
-		}
-		else {
-			cnt[a / 10]++;
-		}
+	for (i = 3; i <= 40; i++) {
+		fibo[i] = fibo[i - 1] + fibo[i - 2];
 	}
 
-	for (i = 0; i < 10; i++) {
-		if (cnt[i] != 0) {
-			printf("%d : %d\n", i, cnt[i]);
-		}
-	}
+	printf("피보나치 수열 10항 : %d\n", fibo[10]);
+	printf("피보나치 수열 20항 : %d\n", fibo[20]);
+	printf("피보나치 수열 30항 : %d\n", fibo[30]);
+	printf("피보나치 수열 40항 : %d\n", fibo[40]);
+
 
 	return 0;
 }
