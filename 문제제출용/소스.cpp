@@ -3,22 +3,20 @@
 
 int main()
 {
-	int i,j,cnt[100]={0};
-	char a[100];
+	int i, j, a[100],cnt[10]={0},tmp=0;
 
 	for (i = 0; i < 100; i++) {
-		scanf(" %c", &a[i]);
-		if (a[i] < 'A' || a[i]>'Z') {
+		scanf("%d", &a[i]);
+		if (a[i] == 0) {
 			break;
 		}
-		else  {
-			cnt[a[i] - 65] += 1;
-		}
+		cnt[a[i]%10]++;
+		tmp++;
 	}
 
-	for (j = 0; j < 100; j++) {
-		if (cnt[j] > 0) {
-			printf("%c : %d\n", j+65, cnt[j]);
+	for (i = 0; i < tmp; i++) {
+		if (cnt[i] > 0) {
+			printf("%d : %d°³\n", i, cnt[i]);
 		}
 	}
 
