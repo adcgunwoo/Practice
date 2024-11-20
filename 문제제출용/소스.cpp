@@ -3,26 +3,23 @@
 
 int main()
 {
-	int i,j,k,a[100],tmp;
+	int i, a,count[10]={0};
+
 	for (i = 0; i < 100; i++) {
-		scanf("%d", &a[i]);
-		if (a[i] == 999) {
+		scanf("%d", &a);
+		if (a < 1 || a > 10) {
 			break;
+		}
+		count[a - 1] += 1;
+	}
+	
+	for (int j = 0; j < 10; j++) {
+		if (count[j] > 0) {
+			printf("%d : %d°³\n", j + 1, count[j]);
 		}
 	}
 
-	for (j = 0; j < i - 1; j++) {
-		for (k = j+1; k < i; k++) {
-			if (a[j] < a[k]) {
-				tmp = a[j];
-				a[j] = a[k];
-				a[k] = tmp;
-			}
-		}
-	}
-	
-	printf("max : %d\n", a[0]);
-	printf("min : %d\n", a[i-1]);
+
 
 	return 0;
 }
