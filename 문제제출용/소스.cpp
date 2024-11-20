@@ -3,21 +3,14 @@
 
 int main()
 {
-	int i, n;
-
-	scanf("%d", &n);
-	int a[100] = { 100,n, }, tmp;
-	for (i = 2; i < 100; i++) {
-		a[i]=a[i-2] - a[i-1];
-	}
+	int i, j,a[3][3]={{3,5,4},{2,6,7},{8,10,1}};
 	
-	for (i = 0; i < 100; i++) {
-		printf("%d ", a[i]);
-		if (a[i] < 0) {
-			break;
+	for (i = 0; i < 3; i++) {
+		for (j = 0; j < 3; j++) {
+			printf("%d ", a[i][j]);
 		}
+		printf("\n");
 	}
-	
 
 	return 0;
 }
