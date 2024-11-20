@@ -3,13 +3,28 @@
 
 int main()
 {
-	int i, j,a[3][5]={{5,8,10,6,4},{11,20,1,13,2},{7,9,14,22,3}};
+	int i, j,a[3][3],b[3][3],c[3][3];
 
 	for (i = 0; i < 3; i++) {
-		for (j = 0; j < 5; j++) {
-			printf("%2d   ", a[i][j]);
+		printf("첫 번째 배열 %d행 ", i + 1);
+		for (j = 0; j < 3; j++) {
+			scanf("%d", &a[i][j]);
+		}
+	}
+	for (i = 0; i < 3; i++) {
+		printf("두 번째 배열 %d행 ", i + 1);
+		for (j = 0; j < 3; j++) {
+			scanf("%d", &b[i][j]);
+		}
+	}
+
+	for (i = 0; i < 3; i++) {
+		for (j = 0; j < 3; j++) {
+			c[i][j] = a[i][j] + b[i][j];
+			printf("%d ", c[i][j]);
 		}
 		printf("\n");
 	}
+
 	return 0;
 }
