@@ -3,19 +3,18 @@
 
 int main()
 {
-	int i,j,m, n, a[10]={0};
+	int i, j,a[4][3],sum[4]={0};
 
-	scanf("%d %d", &m, &n);
-	a[0] = m, a[1] = n;
-
-	for (i = 2; i < 10; i++) {
-		a[i] = a[i - 2] + a[i - 1];
-		if (a[i] >= 10) {
-			a[i] = a[i] % 10;
+	for (i = 0; i < 4; i++) {
+		printf("%dclass? ", i + 1);
+		for (j = 0; j < 3; j++) {
+			scanf("%d", &a[i][j]);
+			sum[i] += a[i][j];
 		}
 	}
-	for (i = 0; i < 10; i++) {
-		printf("%d ", a[i]);
+	for (i = 0; i < 4; i++) {
+		printf("%dclass : ", i + 1);
+		printf("%d\n", sum[i]);
 	}
 	return 0;
 }
