@@ -3,32 +3,25 @@
 
 int main()
 {
-	int i, j,a[4][4]={{0}};
+	int i, j, a[5][5]={{0}};
+	int cnt=0;
 
-	for (i = 0; i < 3; i++) {
-		printf("%d번째 학생의 점수 ",i+1);
-		for (j = 0; j < 3; j++) {
+	for (i = 0; i < 5; i++) {
+		for (j = 0; j < 4; j++) {
 			scanf("%d", &a[i][j]);
-			a[i][3] += a[i][j];
-			a[3][j] += a[i][j];
-			a[3][3] += a[i][j];
+			a[i][4] += a[i][j];
 		}
 	}
-
-	printf("     국어 영어 수학 총점\n");
-	for (i = 0; i < 4; i++) {
-		if (i >= 3) {
-			printf("합계");
+	for (i = 0; i < 5; i++) {
+		if (a[i][4] >= 320) {
+			printf("pass\n");
+			cnt++;
 		}
 		else {
-			printf(" %d번", i + 1);
+			printf("fail\n");
 		}
-		for (j = 0; j < 4; j++) {
-			printf("%4d", a[i][j]);
-		}
-		printf("\n");
 	}
-
+	printf("Successful : %d", cnt);
 
 	return 0;
 }
