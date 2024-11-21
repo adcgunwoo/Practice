@@ -3,18 +3,24 @@
 
 int main()
 {
-	int i, j,a[4][3],sum[4]={0};
+	int i, j, /*int */ a[7][7] = {{0}};
 
-	for (i = 0; i < 4; i++) {
-		printf("%dclass? ", i + 1);
-		for (j = 0; j < 3; j++) {
-			scanf("%d", &a[i][j]);
-			sum[i] += a[i][j];
+	a[1][1] = 1; 
+	a[1][3] = 1; 
+	a[1][5] = 1;
+
+	for (i = 2; i < 6; i++) {
+		for (j = 1; j < 6; j++) {
+			a[i][j] = a[i-1][j-1]+a[i-1][j+1];
 		}
 	}
-	for (i = 0; i < 4; i++) {
-		printf("%dclass : ", i + 1);
-		printf("%d\n", sum[i]);
+
+	for (i = 1; i < 6; i++) {
+		for (j = 1; j < 6; j++) {
+			printf("%d ", a[i][j]);
+		}
+		printf("\n");
 	}
+
 	return 0;
 }
