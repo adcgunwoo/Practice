@@ -3,20 +3,17 @@
 
 int main()
 {
-	int n, i, j, a[11][11]={{0}};
-	a[1][1] = 1;
+	int i, j;
+	char a[3][5];
 
-	scanf("%d", &n);
-
-	for (i = 2; i <= n; i++) {
-		for (j = 1; j <= n; j++) {
-			a[i][j] = a[i - 1][j - 1] + a[i - 1][j];
+	for (i = 0; i < 3; i++) {
+		for (j = 0; j < 5; j++) {
+			scanf(" %c", &a[i][j]);
 		}
 	}
-
-	for (i = n; i >=1 ; i--) {
-		for (j = i; j >= 1; j--) {
-			printf("%d ", a[i][j]);
+	for (i = 0; i < 3; i++) {
+		for (j = 0; j < 5; j++) {
+			printf("%c ", a[i][j]+32);
 		}
 		printf("\n");
 	}
