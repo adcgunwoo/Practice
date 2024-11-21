@@ -3,25 +3,21 @@
 
 int main()
 {
-	int i, j, a[5][5]={{0}};
-	int cnt=0;
+	int i, j, a[6][6] = {{0}}; //파스칼의 삼각형
+	
+	a[1][1] = 1;
 
-	for (i = 0; i < 5; i++) {
-		for (j = 0; j < 4; j++) {
-			scanf("%d", &a[i][j]);
-			a[i][4] += a[i][j];
+	for (i = 2; i < 6; i++) {
+		for (j = 1; j <= i; j++) { // 피라미드 방식으로 출력해야하므로 조건식을 i까지
+			a[i][j] = a[i-1][j-1] + a[i-1][j];
 		}
 	}
-	for (i = 0; i < 5; i++) {
-		if (a[i][4] >= 320) {
-			printf("pass\n");
-			cnt++;
-		}
-		else {
-			printf("fail\n");
-		}
-	}
-	printf("Successful : %d", cnt);
 
+	for (i = 1; i < 6; i++) {
+		for (j = 1; j <= i; j++) {
+			printf("%d ", a[i][j]);
+		}
+		printf("\n");
+	}
 	return 0;
 }
