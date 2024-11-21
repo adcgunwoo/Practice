@@ -3,25 +3,21 @@
 
 int main()
 {
-	int i, j,a[6][6]={{0}};
-	
-	for (i = 1; i <6; i++) {
-		a[i][1] = 1;
-		for (j = 1; j < 6; j++) {
-			a[1][j] = 1;
+	int i,a[101],b[11]={0}; //범위 잘 볼것
+
+	for (i = 0; i < 101; i++) {
+		scanf("%d", &a[i]);
+		if (a[i] == 0) {
+			break;
 		}
+		b[a[i] / 10]++;
 	}
-	for (i = 2; i < 6; i++) {
-		for (j = 2; j < 6; j++) {
-			a[i][j] = a[i - 1][j] + a[i][j - 1];
+	for (i = 10; i >= 0; i--) { 
+		if (b[i] > 0) {
+			printf("%d : %d person\n", i * 10, b[i]);
 		}
 	}
 
-	for (i = 1; i < 6; i++) {
-		for (j = 1; j < 6; j++) {
-			printf("%d ", a[i][j]);
-		}
-		printf("\n");
-	}
+
 	return 0;
 }
