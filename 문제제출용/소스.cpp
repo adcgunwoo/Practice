@@ -1,44 +1,35 @@
 #define _crt_no_secure_warnings
 #include <stdio.h>
-int cal(int x, char z, int y);
+void change1(int x, int y);
+void change2(int &x, int &y);
 int main()
 {
 	int a, b;
-	char c;
-	scanf("%d %c %d", &a, &c, &b);
-	printf("%d %c %d = %d", a,c,b,cal(a, c, b));
+	printf("두 수를 입력하세요. ");
+	scanf("%d %d", &a, &b);
+	change1(a, b);
+	printf("첫 번째 함수 실행후 a = %d, b = %d\n", a,b);
+	change2(a, b);
+	printf("두 번째 함수 실행후 a = %d, b = %d\n", a,b);
+	
+	return 0;
 }
-int cal(int x, char z, int y)
+void change1(int x, int y)
 {
-	if (z == '+') return x + y;
-	else if (z == '-') return x - y;
-	else if (z == '*') return x * y;
-	else if (z == '/') return x / y;
-	else return 0;
+	int tmp;
+	tmp = x;
+	x = y;
+	y = tmp;
+	
+	printf("첫 번째 함수 실행중 x = %d, y = %d\n", x, y);
 }
-/* int gesan(int x, int y, char op)
+void change2(int& x, int& y)
 {
-    switch (op) {
-    case '+':
-        return x + y;
-    case '-':
-        return x - y;
-    case '*':
-        return x * y;
-    case '/':
-        return x / y;
-    }
+	int tmp;
+	tmp = x;
+	x = y;
+	y = tmp;
+
+	printf("두 번째 함수 실행중 x = %d, y = %d\n", x, y);
 }
 
-int main()
-{
-    {
-        int a, b;
-        char c;
-
-        scanf("%d %c %d", &a, &c, &b);
-        printf("%d %c %d = %d\n", a, c, b, gesan(a, b, c));
-
-        return 0;
-    }
-}*/
