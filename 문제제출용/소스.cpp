@@ -1,25 +1,17 @@
 #define _crt_no_secure_warnings
 #include <stdio.h>
-int sum(int x, int y);
-int min(int x, int y);
+double avg(int x, int y, int z);
 int main()
 {
-	int i, a, b,add;
-	scanf("%d %d", &a, &b);
+	int i, j, a, b, c;
+	printf("세과목의 점수를 입력하세요. ");
+	scanf("%d %d %d", &a, &b, &c);
+	printf("평균 : %.2lf", avg(a, b, c));
 	
-	printf("두 수의 합 = %d\n", sum(a,b));
-	printf("두 수의 차 = %d\n", min(a,b));
+	return 0;
 }
-int sum(int x, int y)
+
+double avg(int x, int y, int z)
 {
-	return x + y;
-}
-int min(int x, int y)
-{
-	if (x - y > 0) {
-		return x - y;
-	}
-	else if (x - y < 0) {
-		return -x + y;
-	}
+	return double(x + y + z) / 3;
 }
