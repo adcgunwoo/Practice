@@ -1,9 +1,6 @@
 #define _crt_no_secure_warnings
 #include <stdio.h>
-void line()
-{
-	puts("==============================");
-}
+void line();
 int main()
 {
 	line();
@@ -12,4 +9,8 @@ int main()
 	line();
 
 	return 0;
+}
+void line()
+{
+	puts("==============================");
 }
