@@ -1,17 +1,44 @@
 #define _crt_no_secure_warnings
 #include <stdio.h>
-double avg(int x, int y, int z);
+int cal(int x, char z, int y);
 int main()
 {
-	int i, j, a, b, c;
-	printf("세과목의 점수를 입력하세요. ");
-	scanf("%d %d %d", &a, &b, &c);
-	printf("평균 : %.2lf", avg(a, b, c));
-	
-	return 0;
+	int a, b;
+	char c;
+	scanf("%d %c %d", &a, &c, &b);
+	printf("%d %c %d = %d", a,c,b,cal(a, c, b));
+}
+int cal(int x, char z, int y)
+{
+	if (z == '+') return x + y;
+	else if (z == '-') return x - y;
+	else if (z == '*') return x * y;
+	else if (z == '/') return x / y;
+	else return 0;
+}
+/* int gesan(int x, int y, char op)
+{
+    switch (op) {
+    case '+':
+        return x + y;
+    case '-':
+        return x - y;
+    case '*':
+        return x * y;
+    case '/':
+        return x / y;
+    }
 }
 
-double avg(int x, int y, int z)
+int main()
 {
-	return double(x + y + z) / 3;
-}
+    {
+        int a, b;
+        char c;
+
+        scanf("%d %c %d", &a, &c, &b);
+        printf("%d %c %d = %d\n", a, c, b, gesan(a, b, c));
+
+        return 0;
+    }
+}*/
