@@ -1,30 +1,29 @@
 #define _crt_no_secure_warnings
 #include <stdio.h>
-int a, b;
-int sum , mul;
-void question()
+void input(int& x, int& y)
 {
 	printf("두 수를 입력하세요. ");
+	scanf("%d %d", &x, &y);
 }
-void input()
+int plus(int& x, int& y)
 {
-	scanf("%d %d", &a, &b);
+	return x + y;
 }
-void gyesan()
+int mul(int& x, int& y)
 {
-	sum = a + b;
-	mul = a * b;
+	return x * y;
 }
-void output()
+void output(int& x, int& y)
 {
-	printf("합 : %d\n", sum);
-	printf("곱 : %d\n", mul);
+	printf("합 : %d\n", x);
+	printf("곱 : %d\n", y);
 }
 int main()
 {
-	question();
-	input();
-	gyesan();
-	output();
+	int a, b;
+	input(a,b);
+	int hap = plus(a, b);
+	int gop = mul(a, b);
+	output(hap, gop);
 	return 0;
 }
