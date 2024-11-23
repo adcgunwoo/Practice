@@ -1,29 +1,18 @@
 #define _crt_no_secure_warnings
 #include <stdio.h>
 #include <math.h>
-#include <stdlib.h>
-void sort(int &a, int &b)
-{
-	if (abs(a) > abs(b)) {
-		printf("%d\n", a);
-	}
-	else printf("%d\n", b);
-}
-void soort(double& q, double& w)
-{
-	if (fabs(q) > fabs(w)) {
-		printf("%.2lf\n", w);
-	}
-	else printf("%.2lf\n", q);
+//#include <stdlib.h>
 
-}
 int main()
 {
-	int a,b;
-	double c, d;
-	scanf("%d %d", &a, &b);
-	scanf("%lf %lf", &c, &d);
-	sort(a, b);
-	soort(c, d);
+	double area;
+	double b,c;
+	printf("정사각형의 넓이 : ");
+	scanf("%lf", &area);
+	printf("정사각형의 한 변의 길이 : %lf\n", sqrt(area));
+	printf("밑과 지수 : ");
+	scanf("%lf %lf", &b, &c);
+	printf("%lf의 %lf승은 %lf입니다.", b, c, pow(b, c));
+
 	return 0;
 }
