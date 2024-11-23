@@ -1,32 +1,29 @@
 #define _crt_no_secure_warnings
 #include <stdio.h>
-void input(int &x,int &y)
+#include <math.h>
+#include <stdlib.h>
+void sort(int &a, int &b)
 {
-	scanf("%d %d", &x, &y);
+	if (abs(a) > abs(b)) {
+		printf("%d\n", a);
+	}
+	else printf("%d\n", b);
 }
-void imput(double &x,double &y)
+void soort(double& q, double& w)
 {
-	scanf("%lf %lf", &x, &y);
-}
-void output(int& m, double& n)
-{
-	printf("두 정수의 차 : %d\n", m);
-	printf("두 실수의 차 : %lf\n", n);
-}
-void sort(int& x, int& y, double& q, double &w)
-{
-	int min = x - y;
-	if (min < 0) min *= -1;
-	double nus = q - w;
-	if (nus < 0) nus *= -1;
-	output(min, nus);
+	if (fabs(q) > fabs(w)) {
+		printf("%.2lf\n", w);
+	}
+	else printf("%.2lf\n", q);
+
 }
 int main()
 {
-	int a, b;
+	int a,b;
 	double c, d;
-	input(a, b);
-	imput(c, d);
-	sort(a, b, c, d);
+	scanf("%d %d", &a, &b);
+	scanf("%lf %lf", &c, &d);
+	sort(a, b);
+	soort(c, d);
 	return 0;
 }
