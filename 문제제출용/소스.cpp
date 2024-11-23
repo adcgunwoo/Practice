@@ -1,36 +1,37 @@
 #define _crt_no_secure_warnings
 #include <stdio.h>
-void input(int x[],int &y)
+void output(int &m, int &n);
+void input(int x[], int y)
 {
-	scanf("%d", &y);
+	printf("3과목의 점수를 입력하세요. ");
 	for (int i = 0; i < y; i++) {
 		scanf("%d", &x[i]);
 	}
 }
-void swap(int x[],int &y)
+void sort(int r[], int t)
 {
-	for (int i = 0; i < y - 1; i++) {
-		for (int j = i + 1; j < y; j++) {
-			if (x[i] < x[j]) {
-				int tmp = x[i];
-				x[i] = x[j];
-				x[j] = tmp;
-			}
+	int sum = 0,fail=0;
+	for (int i = 0; i < t; i++) {
+		sum += r[i];
+		if (r[i] < 40) {
+			fail++;
 		}
 	}
+	output(sum,fail);
 }
-void output(int d[],int &e)
+void output(int &m,int &n)
 {
-	for (int i = 0; i < e; i++) {
-		printf("%d ", d[i]);
+	if (m > 180 && n == 0) {
+		printf("축하합니다. 합격입니다.");
+	}
+	else {
+		printf("죄송합니다. 불합격입니다.");
 	}
 }
 int main()
 {
-	int a[10],n;
-	input(a, n);
-	swap(a, n);
-	output(a, n);
-
+	int a[3];
+	input(a, 3);
+	sort(a, 3);
 	return 0;
 }
