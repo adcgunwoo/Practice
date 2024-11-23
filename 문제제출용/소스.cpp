@@ -1,38 +1,32 @@
 #define _crt_no_secure_warnings
 #include <stdio.h>
-void input(int& x, int& y)
+void input(int &x,int &y)
 {
 	scanf("%d %d", &x, &y);
 }
-void sort(int& f, int& g)
+void imput(double &x,double &y)
 {
-	if (f > 12 || f < 1 || g < 1 || g>31) {
-		printf("BAD!");
-	}//1,3,5,7,8,10,12
-	else if (f == 1 || f == 3 || f == 5 || f == 7 || f == 8 || f == 10 || f == 12) {
-		if (g >= 1 && g <= 31) {
-			printf("OK!");
-		} 
-		else printf("BAD");
-	}
-	else if (f == 2) {
-		if (g > 29) {
-			printf("BAD!");
-		}
-		else printf("OK!");
-	}
-	else if (f == 4 || f == 6 || f == 9 || f == 11) {
-		if (g >= 1 && g <= 30) {
-			printf("OK!");
-		}
-		else printf("BAD!");
-	}
+	scanf("%lf %lf", &x, &y);
+}
+void output(int& m, double& n)
+{
+	printf("두 정수의 차 : %d\n", m);
+	printf("두 실수의 차 : %lf\n", n);
+}
+void sort(int& x, int& y, double& q, double &w)
+{
+	int min = x - y;
+	if (min < 0) min *= -1;
+	double nus = q - w;
+	if (nus < 0) nus *= -1;
+	output(min, nus);
 }
 int main()
 {
 	int a, b;
+	double c, d;
 	input(a, b);
-	sort(a, b);
-
+	imput(c, d);
+	sort(a, b, c, d);
 	return 0;
 }
