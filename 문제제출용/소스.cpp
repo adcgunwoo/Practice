@@ -1,18 +1,29 @@
 #define _crt_no_secure_warnings
 #include <stdio.h>
-int output(int &x, int &y)
+void output(int x[4][4])
 {
-	int n = x*x-y*y;
-	if (n < 0) {
-		n *= -1;
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			printf("%d ", x[i][j]);
+		}
+		printf("\n");
 	}
-	return n;
+}
+void input()
+{
+	int a[4][4]={{0}};
+	for(int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			scanf("%d", &a[i][j]);
+			a[i][3] += a[i][j];
+			a[3][j] += a[i][j];
+			a[3][3] += a[i][j];
+		}
+	}
+	output(a);
 }
 int main()
 {
-	int a, b;
-	scanf("%d %d", &a,&b);
-	printf("%d", output(a, b));
-
+	input();
 	return 0;
 }
