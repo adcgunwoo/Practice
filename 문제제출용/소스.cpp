@@ -1,37 +1,38 @@
 #define _crt_no_secure_warnings
 #include <stdio.h>
-void output(int &m, int &n);
-void input(int x[], int y)
+void input(int& x, int& y)
 {
-	printf("3과목의 점수를 입력하세요. ");
-	for (int i = 0; i < y; i++) {
-		scanf("%d", &x[i]);
-	}
+	scanf("%d %d", &x, &y);
 }
-void sort(int r[], int t)
+void sort(int& f, int& g)
 {
-	int sum = 0,fail=0;
-	for (int i = 0; i < t; i++) {
-		sum += r[i];
-		if (r[i] < 40) {
-			fail++;
+	if (f > 12 || f < 1 || g < 1 || g>31) {
+		printf("BAD!");
+	}//1,3,5,7,8,10,12
+	else if (f == 1 || f == 3 || f == 5 || f == 7 || f == 8 || f == 10 || f == 12) {
+		if (g >= 1 && g <= 31) {
+			printf("OK!");
+		} 
+		else printf("BAD");
+	}
+	else if (f == 2) {
+		if (g > 29) {
+			printf("BAD!");
 		}
+		else printf("OK!");
 	}
-	output(sum,fail);
-}
-void output(int &m,int &n)
-{
-	if (m > 180 && n == 0) {
-		printf("축하합니다. 합격입니다.");
-	}
-	else {
-		printf("죄송합니다. 불합격입니다.");
+	else if (f == 4 || f == 6 || f == 9 || f == 11) {
+		if (g >= 1 && g <= 30) {
+			printf("OK!");
+		}
+		else printf("BAD!");
 	}
 }
 int main()
 {
-	int a[3];
-	input(a, 3);
-	sort(a, 3);
+	int a, b;
+	input(a, b);
+	sort(a, b);
+
 	return 0;
 }
