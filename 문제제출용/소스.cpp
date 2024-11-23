@@ -1,29 +1,34 @@
 #define _crt_no_secure_warnings
 #include <stdio.h>
-void output(int x[4][4])
+void input(int x[])
 {
-	for (int i = 0; i < 4; i++) {
-		for (int j = 0; j < 4; j++) {
-			printf("%d ", x[i][j]);
-		}
-		printf("\n");
+	for (int i = 0; i < 6; i++) {
+		scanf("%d", &x[i]);
 	}
 }
-void input()
+void swap(int x[])
 {
-	int a[4][4]={{0}};
-	for(int i = 0; i < 3; i++) {
-		for (int j = 0; j < 3; j++) {
-			scanf("%d", &a[i][j]);
-			a[i][3] += a[i][j];
-			a[3][j] += a[i][j];
-			a[3][3] += a[i][j];
+	for (int i = 0; i < 5; i++) {
+		for (int j = i + 1; j < 6; j++) {
+			if (x[i] > x[j]) {
+				int tmp = x[i];
+				x[i] = x[j];
+				x[j] = tmp;
+			}
 		}
 	}
-	output(a);
+}
+void output(int x[])
+{
+	for (int i = 0; i < 6; i++) {
+		printf("%d ", x[i]);
+	}
 }
 int main()
 {
-	input();
+	int a[6];
+	input(a);
+	swap(a);
+	output(a);
 	return 0;
 }
