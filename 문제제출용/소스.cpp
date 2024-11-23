@@ -1,19 +1,20 @@
 #define _crt_no_secure_warnings
 #include <stdio.h>
-int output(int &x)
+void output(int x)
 {
-	int sum = 0;
+	int n;
 	for (int i = 1; i <= x; i++) {
-		sum += i;
+		for (int j = i; j <= i*x; j+=i) {
+			printf("%d ", j);
+		}
+		printf("\n");
 	}
-	return sum;
 }
 int main()
 {
 	int a;
 	scanf("%d", &a);
-	int hap = output(a);
-	printf("%d", hap);
+	output(a);
 
 	return 0;
 }
