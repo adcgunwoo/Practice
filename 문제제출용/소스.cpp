@@ -1,13 +1,12 @@
 #define _crt_no_secure_warnings
 #include <stdio.h>
-#include <math.h>
-//#include <stdlib.h>
+#define pi 3.14
+#define sik r *2*pi
 int main()
 {
-	double ci,radius;
-	const double pi = 3.14;
-	scanf("%lf", &radius);
-	ci = 2 * radius * pi;
+	double r, ci;
+	scanf("%lf", &r);
+	ci = sik;
 	printf("%.2lf", ci);
 
 	return 0;
