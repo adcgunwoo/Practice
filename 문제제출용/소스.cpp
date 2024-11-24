@@ -1,36 +1,35 @@
 #define _crt_no_secure_warnings
 #include <stdio.h>
 #define swap(x,y) {int z=x; x=y; y=z;}
-void sort(int x[], int y);
-void input(int q[], int w);
-void ouput(int m[], int n);
-void input(int q[], int w)
+void input(int x[], int y)
 {
-	for (int i = 0; i < w; i++) {
-		scanf("%d", &q[i]);
+	for (int i = 0; i < y; i++) {
+		scanf("%d", &x[i]);
 	}
+}
+void output(int x[], int y)
+{
+	for (int i = 0; i < y; i++) {
+		printf("%d ", x[i]);
+	}
+	printf("\n");
 }
 void sort(int x[], int y)
 {
-	for (int i = 0; i < y - 1; i++) {
-		for (int j = i + 1; j < y; j++) {
-			if (x[i] > x[j]) {
-				swap(x[i] , x[j]);
+	for (int i = 1; i < y; i++) {
+		for (int j = 0; j < y - i; j++) {
+			if (x[j] < x[j+1]) {
+				swap(x[j], x[j + 1]);		
 			}
 		}
-	}
-}
-void output(int m[], int n)
-{
-	for (int i = 0; i < n; i++) {
-		printf("%d ", m[i]);
+		output(x, y);
 	}
 }
 int main()
 {
-	int a[5];
-	input(a, 5);
-	sort(a, 5);
-	output(a, 5);
+	int a[10];
+	input(a, 10);
+	sort(a, 10);
+
 	return 0;
 }
