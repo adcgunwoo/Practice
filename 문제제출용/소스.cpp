@@ -1,13 +1,13 @@
 #define _crt_no_secure_warnings
 #include <stdio.h>
-#define pi 3.14
-#define sik r *2*pi
+#define one 1
+#define three 3
 int main()
 {
-	double r, ci;
-	scanf("%lf", &r);
-	ci = sik;
-	printf("%.2lf", ci);
-
+	for (int i = one; i <= three; i++) {
+		for (int j = one; j <= three; j++) {
+			printf("%d + %d = %d\n", i, j, i + j);
+		}
+	}
 	return 0;
 }
