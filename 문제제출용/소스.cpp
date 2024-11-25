@@ -14,7 +14,7 @@ void dice(int step)
 	int i;
 	if (step > N) { // 던진 주사위가 입력된 값에 만족하면, 출력으로 넘어감.
 		output();
-		return;
+		return; //리턴
 	}
 	for (i = 1; i <= 6; i++) {
 		a[step] = i; // 예를 들어, a[1]이면 첫번째 주사위를 던지는 것이다.
