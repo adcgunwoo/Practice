@@ -3,10 +3,8 @@
 #include <math.h>
 int output(int x)
 {
-	if (x < 1) {
-		return 0;
-	}
-	return x + output(x - 1);
+	if (x == 0) return 0;
+	return x%10+output(x/10);
 }
 int main()
 {
