@@ -1,21 +1,16 @@
 #define _crt_no_secure_warnings
 #include <stdio.h>
-void sort(int x[], int y)
+int a[51] = { 0,1,1, };
+int	fibo(int x)
 {
-	for (int i = 2; i < y; i++) {
-		x[i] = x[i - 2] + x[i - 1];
-	}
-}
-void output(int x,int y[])
-{
-	printf("%d", y[x - 1]);
+	if (a[x] == 0) a[x] = fibo(x - 1) + fibo(x - 2); //값이 없으면 피보나치 계산 시작
+	return a[x];//메모이제이션 : 이미 계산된 값은 더 하지 않음
 }
 int main() 
 {
-	int N, a[51]={1,1,};
+	int N;
 	scanf("%d", &N);
-	sort(a,51);
-	output(N,a);
-
+	printf("%d", fibo(N));
+	
 	return 0;
 }
