@@ -2,14 +2,11 @@
 #include <stdio.h>
 int main()
 {
-	int a;
+	char a[100];
 
-	while (1) {
-		printf("ASCII code =? ");
-		scanf("%d", &a);
-		if (a<33 || a>127) break;
-		printf("%c\n", a);
-	}
+	scanf("%s", a);
+
+	printf("%s ", a);
 
 	return 0;
 }
