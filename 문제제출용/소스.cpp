@@ -2,12 +2,13 @@
 #include <stdio.h>
 int main()
 {
-	char a;
+	int a;
 
 	while (1) {
-		scanf(" %c", &a);
-		printf("%c -> %d\n", a, a);
-		if (a == '0') break;
+		printf("ASCII code =? ");
+		scanf("%d", &a);
+		if (a<33 || a>127) break;
+		printf("%c\n", a);
 	}
 
 	return 0;
