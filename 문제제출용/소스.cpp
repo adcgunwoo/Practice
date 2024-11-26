@@ -2,11 +2,14 @@
 #include <stdio.h>
 int main()
 {
-	char a[100];
-
-	scanf("%s", a);
-
-	printf("%s ", a);
+	char arr[100]="jungol olympiad";
+	int a[5],i;
+	for (i = 0; i < 5; i++) {
+		scanf("%d", &a[i]);
+	}
+	for (i = 0; i < 5; i++) {
+		printf("%c", arr[a[i]]);
+	}
 
 	return 0;
 }
