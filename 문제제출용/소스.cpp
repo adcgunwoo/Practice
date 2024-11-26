@@ -2,11 +2,10 @@
 #include <stdio.h>
 void sort(int x)
 {
-	if (x == 0) {
-		return;	
-	}
-	sort(x / 2);
+	if (x < 1) return;
+	sort(x-2);
 	printf("%d ", x);
+
 }
 int main()
 {
