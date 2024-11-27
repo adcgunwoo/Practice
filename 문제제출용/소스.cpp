@@ -4,19 +4,19 @@
 
 int main()
 {
-	char a[50],tmp;
-	int len,i,j;
-	scanf("%s", a); //fgets는 공백이 있는 문자열을 하나로 받는것이지 그냥 문자열은 안됨.
+	char a[100],tmp,pmt;
+	int len, i, j;
+	scanf("%s", a);
 	len = strlen(a);
-	for (i = 0; i < len; i++) {
-		tmp = a[0]; // a 배열의 값이 대입되면서 바뀔수있기에, 
-		for (j = 0; j < len-1; j++) {
-			a[j] = a[j+1];
-		}
-		a[len - 1] = tmp;
-		printf("%s \n", a);
-	}
 
+	for (i = 0; i < len; i++) {
+		tmp = a[len - 1];
+		for (j=len-1; j>=0; j--){ // for (j=0; j<len-1; j++) { 왼쪽으로 돌렸을때와 차이
+			a[j] = a[j-1];	//            a[j] = a[j+1];         
+		}
+		a[0] = tmp;
+		printf("%s \n",a);
+	}
 
 	return 0;
 }
