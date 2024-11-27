@@ -1,25 +1,29 @@
 #define _crt_no_secure_warnings
 #include <stdio.h>
-#include <string.h> //fgets 함수를 사용하기 위해 정의
+#include <string.h>
 #include <ctype.h>
+int N;
 int main()
 {
 	char a[100];
+	int len,j,cnt=0,n;
 	scanf("%s", a);
-	int i,len = strlen(a);
-	
-	for (i = 0; i < len; i++) {
-		if (isupper(a[i])) {
-			printf("%c", a[i] + 32);
+	len = strlen(a);
+	while(1) {
+		scanf("%d", &n);
+		if (n >= len) {
+			n = len;
 		}
-		else if (islower(a[i])) {
-			printf("%c", a[i]);
+		for (j = 0; j < len; j++) {
+			if (n != j + 1) {
+				printf("%c", a[j]);
+				a[cnt++] = a[j];
+			}
 		}
-		else if (isdigit(a[i])) {
-			printf("%c", a[i]); //숫자라고 %d로 출력하면 안됨!
-		}
+		len -= 1;
+		printf("\n");
+		cnt = 0;
+		if (len == 1) break;
 	}
-
-
 	return 0;
 }
