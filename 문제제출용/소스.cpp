@@ -3,24 +3,18 @@
 #include <string.h>
 int main()
 {   
-	char a[20], b[20];
-	scanf("%s %s", a, b);
+	char a[20], b[20], c[20];
 
-	if (strcmp(a, b)==0) {
-		printf("두 문자열은 같습니다.\n");
+	scanf("%s %s %s", a, b, c);
+	
+	if (strcmp(b, a) > 0 && strcmp(c, a) > 0) {
+		printf("%s", a);
 	}
-	else if (strcmp(a, b)>0) {
-		printf("%s 가(이) 더 큽니다.\n", a);
+	else if (strcmp(a, b) > 0 && strcmp(c, b) > 0) {
+		printf("%s", b);
 	}
-	else {
-		printf("%s 가(이) 더 큽니다.\n", b);
-	}
-
-	if (strncmp(a, b, 3)==0) {
-		printf("앞의 세 문자가 같습니다.");
-	}
-	else {
-		printf("앞의 세 문자가 같지 않습니다.");
+	else if (strcmp(a, c) > 0 && strcmp(b, c) > 0) {
+		printf("%s", c);
 	}
 	return 0;
 }
