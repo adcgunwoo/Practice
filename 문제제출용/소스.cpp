@@ -3,18 +3,25 @@
 #include <string.h>
 int main()
 {   
-	char a[20], b[20], c[20];
+	char a[5][20],tmp[20];
+	int i,j;
+	printf("단어 5개를 입력하세요.\n");
+	for (i = 0; i < 5; i++) {
+		scanf("%s", a[i]);
+	}
+	for (i = 0; i < 4; i++) {
+		for (j = i + 1; j < 5; j++) {
+			if (strcmp(a[i], a[j]) > 0) {
+				strcpy(tmp, a[i]);
+				strcpy(a[i], a[j]);
+				strcpy(a[j], tmp);
+			}
+		}
+	}
 
-	scanf("%s %s %s", a, b, c);
-	
-	if (strcmp(b, a) > 0 && strcmp(c, a) > 0) {
-		printf("%s", a);
+	for (i = 0; i < 5; i++) {
+		printf("%s\n", a[i]);
 	}
-	else if (strcmp(a, b) > 0 && strcmp(c, b) > 0) {
-		printf("%s", b);
-	}
-	else if (strcmp(a, c) > 0 && strcmp(b, c) > 0) {
-		printf("%s", c);
-	}
+
 	return 0;
 }
