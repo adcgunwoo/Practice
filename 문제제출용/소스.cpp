@@ -1,21 +1,31 @@
 #define _crt_no_secure_warnings
 #include <stdio.h>
-//#include <stdlib.h> //atoi, atof 함수를 사용하기 위해 정의
 #include <string.h>
 int main()
 {   
-	char arr[100];
-	double a, b, c;
-	scanf("%lf %lf %lf", &a, &b, &c);
-	sprintf(arr, "%.2lf%.2lf%.2lf", a, b, c); //세 변수의 내용을 문자열arr에 출력한다.
-	int i, len = strlen(arr);                 //출력한다는게 모니터에 출력하는 것이 아니라
-	                                          //지정된 문자열에 출력하여 저장하는 함수이다.
-	for (i = 0; i < len; i++) {               //문자뿐만 아니라 정수나 실수와 같은 자료형도
-		if (arr[i] == '.') {                  //일단 출력이 되면 모두 문자열로 저장한다.
-			printf("\n");
+	char a[101],b[100][101];
+	fgets(a, 101, stdin);
+	int i, j,wcnt=0,wlen=0;
+	int len = strlen(a);
+	while (a[len - 1] == '\n' || a[len - 1] == '\r') //마지막 값으로 엔터가 같이 입력되므로
+		a[--len] = '\0';                             //그 엔터를 공백으로 바꿔줌 
+	for (i = 0; i < len; i++) {
+		if (a[i] == ' ') {
+			b[wcnt][wlen] = '\0';  //입력된 띄어쓰기를 공백값으로 바꿔주고, 
+			wcnt += 1;             
+			wlen = 0;
 		}
-		else printf("%c", arr[i]);
+		else {
+			b[wcnt][wlen] = a[i];
+			wlen += 1;
+		}
 	}
+	b[wcnt][wlen] = '\0'; //위 조건문과 같이 마지막 값으로 공백을 넣어줌
+	
+	for (i = wcnt; i >=0; i--) {
+		puts(b[i]);
+	}
+
 
 	return 0;
 }
