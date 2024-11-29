@@ -3,29 +3,20 @@
 #include <string.h>
 int main()
 {   
-	char a[101],b[100][101];
-	fgets(a, 101, stdin);
-	int i, j,wcnt=0,wlen=0;
-	int len = strlen(a);
-	while (a[len - 1] == '\n' || a[len - 1] == '\r') //마지막 값으로 엔터가 같이 입력되므로
-		a[--len] = '\0';                             //그 엔터를 공백으로 바꿔줌 
-	for (i = 0; i < len; i++) {
-		if (a[i] == ' ') {
-			b[wcnt][wlen] = '\0';  //입력된 띄어쓰기를 공백값으로 바꿔주고, 
-			wcnt += 1;             
-			wlen = 0;
+	char a[50][101],alpha='0';
+	int cnt = 0,wcnt=0,i;
+	for (i = 0; i < 50; i++) {
+		scanf("%s", a[i]);
+		wcnt++;
+		if (strchr(a[i],alpha)) { // if (a[i][0]==alpha) 의 조건문으로도 작성할 수 있다.
+			break;
 		}
-		else {
-			b[wcnt][wlen] = a[i];
-			wlen += 1;
-		}
+		cnt++;
 	}
-	b[wcnt][wlen] = '\0'; //위 조건문과 같이 마지막 값으로 공백을 넣어줌
-	
-	for (i = wcnt; i >=0; i--) {
-		puts(b[i]);
+	printf("%d\n", cnt);
+	for (i = 0; i < cnt; i+=2) {
+		printf("%s\n", a[i]);
 	}
-
 
 	return 0;
 }
