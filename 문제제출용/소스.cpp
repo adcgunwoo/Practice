@@ -3,25 +3,13 @@
 #include <string.h>
 int main()
 {   
-	int n,i,j;
-	char a[11][101],tmp[101];
-	scanf("%d", &n);
-
-	for (i = 0; i < n; i++) {
-		scanf("%s", a[i]);
-	}
-	for (i = 0; i < n-1; i++) {
-		for (j = i + 1; j < n; j++) {
-			if (strcmp(a[i], a[j]) > 0) {
-				strcpy(tmp, a[i]);
-				strcpy(a[i],a[j]);
-				strcpy(a[j], tmp);
-			}
-		}
-	}
-	for (i = 0; i < n; i++) {
-		printf("%s\n", a[i]);
-	}
+	char a[202], b[202];
+	int n;
+	scanf("%s %s %d", a, b,&n);
+	strcat(a, b);
+	printf("%s\n", a);
+	strncpy(b, a, n);
+	printf("%s\n", b);
 
 	return 0;
 }
