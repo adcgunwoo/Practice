@@ -1,32 +1,35 @@
 #define _crt_no_secure_warnings
 #include <stdio.h>
 #include <string.h>
-struct data //data 는 구조체 태그라고 한다
+struct data //구조체형 data 정의
 {
-	char name[20]; // 구조체에 정의된 이 세개는  
-	int kor,eng;   // 멤버변수라고 한다.
-};  //요기에 선언할 수 있다는 것도 기억해야함
-struct data plus(struct data i,struct data r) // 두 개의data 구조체형을 인수로 전달받아
-{                                             // data 구조체형을 리턴하는 함수를 선언한다.
-	struct data sum;
-	strcpy(sum.name, "합계");
-	sum.kor = i.kor + r.kor;
-	sum.eng = i.eng + r.eng;
+	double x, y;
+};
+void input(struct data &spt) //매개변수로 data 구조체를 전달받는다.
+{                            //참조에 의해 전달받았으므로 전달한 원래의 값도 변한다.
+	printf("점의 좌표는?(x, y) ");
+	scanf("%lf %lf", &spt.x, &spt.y);
 
-	return sum; //인수로 전달받은 구조체 i와 r의 국어, 영어의 합을 
-}               //sum의 해당 멤버에 대입한다.
-int main()      //리턴되는 자료형과 함수의 자료형은 같아야함
-{                                    
-	struct data lee,jun,hap; // 두 개의 이상의 변수를 이렇게 선언할 수 있다.
-	
-	scanf("%s %d %d", lee.name, &lee.kor, &lee.eng);
-	scanf("%s %d %d", jun.name, &jun.kor, &jun.eng);
+}
+struct data center(struct data a, struct data b) //두 좌표를 구조체로 전달받음
+{
+	struct data cen; //구조체 지역변수 cen을 생성
+	cen.x = (a.x + b.x)/2;
+	cen.y = (a.y + b.y)/2;
 
-	hap=plus(lee, jun); // 인수로 전달
-
-	printf("%s %d %d\n", lee.name, lee.kor, lee.eng);
-	printf("%s %d %d\n", jun.name, jun.kor, jun.eng);
-	printf("%s %d %d\n", hap.name, hap.kor, hap.eng);
+	return cen; //계산후 리턴
+}               //리턴값이 구조체 data 이므로 함수의 형도 data로 선언해야함.
+void output(struct data& p) 
+{
+	printf("중심점의 위치 = (%.1lf, %.1lf)", p.x, p.y); // 출력
+}
+int main()
+{
+	struct data one, two, result; //구조체형 data 선언
+	input(one);
+	input(two);
+	result=center(one, two);
+	output(result);
 	
 	return 0;
 }
