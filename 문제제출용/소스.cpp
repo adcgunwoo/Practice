@@ -1,35 +1,31 @@
 #define _crt_no_secure_warnings
 #include <stdio.h>
-#include <string.h>
-struct data //구조체형 data 정의
+struct money  //money는 구조체 태그
 {
-	double x, y;
-};
-void input(struct data &spt) //매개변수로 data 구조체를 전달받는다.
-{                            //참조에 의해 전달받았으므로 전달한 원래의 값도 변한다.
-	printf("점의 좌표는?(x, y) ");
-	scanf("%lf %lf", &spt.x, &spt.y);
+	int number, won;   //입력받은 번호, 돈을 멤버변수로 선언
+}arr[5],king;
+struct money max(struct money arr[], int n)
+{
+	struct money maxdata = arr[0];  //구조체 지역변수를 선언 
+	int i;            //반복문으로 들어가기전 초기값을 최대값으로 설정
 
-}
-struct data center(struct data a, struct data b) //두 좌표를 구조체로 전달받음
-{
-	struct data cen; //구조체 지역변수 cen을 생성
-	cen.x = (a.x + b.x)/2;
-	cen.y = (a.y + b.y)/2;
-
-	return cen; //계산후 리턴
-}               //리턴값이 구조체 data 이므로 함수의 형도 data로 선언해야함.
-void output(struct data& p) 
-{
-	printf("중심점의 위치 = (%.1lf, %.1lf)", p.x, p.y); // 출력
+	for (i = 1; i < n; i++) {  
+		if (maxdata.won < arr[i].won) { 
+			maxdata = arr[i];       //반복문을 돌려가며 최대값 구하기
+		}
+	}
+	return maxdata;
 }
 int main()
 {
-	struct data one, two, result; //구조체형 data 선언
-	input(one);
-	input(two);
-	result=center(one, two);
-	output(result);
-	
+	int i;
+	for (i = 0; i < 5; i++) {
+		printf("%d번 저축금액은? ", i + 1);
+		arr[i].number = i + 1;
+		scanf("%d", &arr[i].won);
+	}
+	king = max(arr, 5);
+	printf("저축왕 %d번 %d원", king.number, king.won);
+
 	return 0;
 }
