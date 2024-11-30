@@ -1,31 +1,32 @@
 #define _crt_no_secure_warnings
 #include <stdio.h>
-struct money  //money는 구조체 태그
+#include <string.h>
+struct data
 {
-	int number, won;   //입력받은 번호, 돈을 멤버변수로 선언
-}arr[5],king;
-struct money max(struct money arr[], int n)
+	int height;
+	char name[20];
+}a[5],small;
+struct data cal(struct data arr[], int n)
 {
-	struct money maxdata = arr[0];  //구조체 지역변수를 선언 
-	int i;            //반복문으로 들어가기전 초기값을 최대값으로 설정
-
-	for (i = 1; i < n; i++) {  
-		if (maxdata.won < arr[i].won) { 
-			maxdata = arr[i];       //반복문을 돌려가며 최대값 구하기
+	int i;
+	small.height = a[0].height;
+	strcpy(small.name, a[0].name);
+	for (i = 0; i < n; i++) {
+		if (small.height > a[i].height) {
+			small.height = a[i].height;
+			strcpy(small.name, a[i].name);
 		}
 	}
-	return maxdata;
+	return small;
 }
 int main()
 {
 	int i;
 	for (i = 0; i < 5; i++) {
-		printf("%d번 저축금액은? ", i + 1);
-		arr[i].number = i + 1;
-		scanf("%d", &arr[i].won);
+		scanf("%s %d", a[i].name, &a[i].height);
 	}
-	king = max(arr, 5);
-	printf("저축왕 %d번 %d원", king.number, king.won);
+	small = cal(a, 5);
+	printf("%s %d", small.name, small.height);
 
 	return 0;
 }
