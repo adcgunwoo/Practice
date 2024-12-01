@@ -1,51 +1,48 @@
 #define _crt_no_secure_warnings
 #include <stdio.h>
-#include <string.h>
 struct data
 {
-	char name[15],tel[15],addr[15];
-}arr[3];
-void input(struct data x[])
+	int x[2], y[2];
+}f[2],s[2],result_f[2],result_s[2];
+void input(struct data n[],struct data m[])
 {
-	int i, j;
-	for (i = 0; i < 3; i++) {
-		scanf("%s %s %s", x[i].name, x[i].tel, x[i].addr);
+	int i;
+	for (i = 0; i < 2; i++) {
+		scanf("%d %d %d %d", &n[i].x[i], &n[i].y[i], &m[i].x[i], &m[i].y[i]);
 	}
 }
-void sort(struct data y[])
+void sort(struct data q[],struct data w[])
 {
 	int i, j;
-	char tmp[15];
-	for (i = 0; i < 2; i++) {
-		for (j = i + 1; j < 3; j++) {
-			if (strcmp(y[i].name, y[j].name) > 0) {
-				strcpy(tmp, y[i].name);
-				strcpy(y[i].name, y[j].name);
-				strcpy(y[j].name, tmp);
-				strcpy(tmp, y[i].tel);
-				strcpy(y[i].tel, y[j].tel);
-				strcpy(y[j].tel, tmp);
-				strcpy(tmp, y[i].addr);
-				strcpy(y[i].addr, y[j].addr);
-				strcpy(y[j].addr, tmp);
+	for (i = 0; i < 1; i++) { //검사, 다른 답들과 비교하기
+		for (j = i + 1; j < 2; j++) {
+			if (q[i].x[i] > q[j].x[j]) {
+				result_f[i].x[i] = q[j].x[j];
 			}
+			else result_f[i].x[i] = q[i].x[i];
+			if (q[i].y[i] < q[j].y[j]) {
+				result_f[i].y[i] = q[i].y[i];
+			}
+			else result_f[i].y[i] = q[j].y[j];
+			if (w[i].x[i] < w[j].x[j]) {
+				result_s[i].x[i] = w[j].x[j];
+			}
+			else result_s[i].x[i] = w[i].x[i];
+			if (w[i].y[i] > w[j].y[j]) {
+				result_s[i].y[i] = w[i].y[i];
+			}
+			else result_s[i].y[i] = w[j].y[j];
 		}
 	}
 }
-void output(struct data z[])
+void output(struct data h[], struct data j[])
 {
-	printf("name : ");
-	printf("%s\n", z[0].name);
-	printf("tel : ");
-	printf("%s\n", z[0].tel);
-	printf("addr : ");
-	printf("%s\n", z[0].addr);
+	printf("%d %d %d %d", result_f[0].x[0], result_f[0].y[0], result_s[0].x[0], result_s[0].y[0]);
 }
 int main()
 {
-	input(arr);
-	sort(arr);
-	output(arr);
-
+	input(f, s);
+	sort(f, s);
+	output(f, s);
 	return 0;
 }
