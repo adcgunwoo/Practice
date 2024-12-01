@@ -3,40 +3,49 @@
 #include <string.h>
 struct data
 {
-	char a[300];
-}n,m[3];
-void input(struct data &x)
+	char name[15],tel[15],addr[15];
+}arr[3];
+void input(struct data x[])
 {
-	fgets(x.a, 300, stdin);
+	int i, j;
+	for (i = 0; i < 3; i++) {
+		scanf("%s %s %s", x[i].name, x[i].tel, x[i].addr);
+	}
 }
-void sort(struct data &q,struct data w[])
+void sort(struct data y[])
 {
-	int i, wcnt = 0,wlen=0;
-	int len = strlen(q.a);
-	for (i = 0; i < len; i++) {
-		if (q.a[i] == ' ') {
-			w[wcnt].a[wlen] = '\0';
-			wcnt += 1;
-			wlen = 0;
-		}
-		else {
-			w[wcnt].a[wlen] = q.a[i];
-			wlen += 1;
+	int i, j;
+	char tmp[15];
+	for (i = 0; i < 2; i++) {
+		for (j = i + 1; j < 3; j++) {
+			if (strcmp(y[i].name, y[j].name) > 0) {
+				strcpy(tmp, y[i].name);
+				strcpy(y[i].name, y[j].name);
+				strcpy(y[j].name, tmp);
+				strcpy(tmp, y[i].tel);
+				strcpy(y[i].tel, y[j].tel);
+				strcpy(y[j].tel, tmp);
+				strcpy(tmp, y[i].addr);
+				strcpy(y[i].addr, y[j].addr);
+				strcpy(y[j].addr, tmp);
+			}
 		}
 	}
-	w[wcnt].a[wlen] = '\0';
 }
-void ouput(struct data w[])
+void output(struct data z[])
 {
-	int i = 0;
-	printf("name : %s\n", w[0].a);
-	printf("tel : %s\n", w[1].a);
-	printf("addr : %s\n", w[2].a);
+	printf("name : ");
+	printf("%s\n", z[0].name);
+	printf("tel : ");
+	printf("%s\n", z[0].tel);
+	printf("addr : ");
+	printf("%s\n", z[0].addr);
 }
 int main()
 {
-	input(n);
-	sort(n,m);
-	ouput(m);
+	input(arr);
+	sort(arr);
+	output(arr);
+
 	return 0;
 }
