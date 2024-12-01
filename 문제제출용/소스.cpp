@@ -3,80 +3,40 @@
 #include <string.h>
 struct data
 {
-	int h;
-	double w;
-	char name[20];
-}a[5],tmp;
-void input(struct data n[], int m)
+	char a[300];
+}n,m[3];
+void input(struct data &x)
 {
-	int i;
-
-	for (i = 0; i < m; i++) {
-		scanf("%s %d %lf", n[i].name, &n[i].h, &n[i].w);
-	}
+	fgets(x.a, 300, stdin);
 }
-void sort_n(struct data n[], int m)
+void sort(struct data &q,struct data w[])
 {
-	int i,j;
-	for (i = 0; i < m-1; i++) {
-		for (j = i + 1; j < m; j++) {
-			if (strcmp(n[i].name,n[j].name)>0) { //n[i].name이 아스키코드값으로 더 크면..
-				strcpy(tmp.name, n[i].name);
-				strcpy(n[i].name, n[j].name);
-				strcpy(n[j].name, tmp.name);
-				tmp.h = n[i].h;
-				n[i].h = n[j].h;
-				n[j].h = tmp.h;
-				tmp.w = n[i].w;
-				n[i].w = n[j].w;
-				n[j].w = tmp.w;
-			}
+	int i, wcnt = 0,wlen=0;
+	int len = strlen(q.a);
+	for (i = 0; i < len; i++) {
+		if (q.a[i] == ' ') {
+			w[wcnt].a[wlen] = '\0';
+			wcnt += 1;
+			wlen = 0;
+		}
+		else {
+			w[wcnt].a[wlen] = q.a[i];
+			wlen += 1;
 		}
 	}
+	w[wcnt].a[wlen] = '\0';
 }
-void output_n(struct data n[], int m)
+void ouput(struct data w[])
 {
 	int i = 0;
-	printf("name\n");
-	for (i = 0; i < m; i++) {
-		printf("%s %d %.1lf\n", n[i].name,n[i].h, n[i].w);
-	}
-	printf("\n");
-}
-void sort_w(struct data n[], int m)
-{
-	int i, j;
-	for (i = 0; i < m - 1; i++) {
-		for (j = i + 1; j < m; j++) {
-			if (n[i].w < n[j].w) {
-				strcpy(tmp.name, n[i].name);
-				strcpy(n[i].name, n[j].name);
-				strcpy(n[j].name, tmp.name);
-				tmp.h = n[i].h;
-				n[i].h = n[j].h;
-				n[j].h = tmp.h;
-				tmp.w = n[i].w;
-				n[i].w = n[j].w;
-				n[j].w = tmp.w;
-			}
-		}
-	}
-}
-void output_w(struct data n[], int m)
-{
-	int i;
-	printf("weight\n");
-	for (i = 0; i < m; i++) {
-		printf("%s %d %.1lf\n", n[i].name, n[i].h, n[i].w);
-	}
+	printf("name : %s\n", w[0].a);
+	printf("tel : %s\n", w[1].a);
+	printf("addr : %s\n", w[2].a);
 }
 int main()
 {
-	input(a, 5);
-	sort_n(a, 5);
-	output_n(a, 5);
-	sort_w(a, 5);
-	output_w(a, 5);
-
+	input(n);
+	sort(n,m);
+	ouput(m);
 	return 0;
 }
