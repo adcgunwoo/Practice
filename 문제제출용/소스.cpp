@@ -3,29 +3,43 @@
 #include <math.h>
 struct data
 {
-	double hei, wei;
-}a,b,result;
-void input(struct data &x, struct data &y)
+	int a, b, c,sum;
+	char name[20];
+}arr[12];
+void input(struct data q[],int w)
 {
-	scanf("%lf %lf", &x.hei, &x.wei);
-	scanf("%lf %lf", &y.hei, &y.wei);
+	int i;
+	for (i = 0; i < w; i++) {	
+		scanf("%s %d %d %d", arr[i].name, &arr[i].a, &arr[i].b, &arr[i].c);
+		arr[i].sum = arr[i].a + arr[i].b + arr[i].c;
+	}	
 }
-struct data sort(struct data& q, struct data& w)
+void sort(struct data n[], int m)
 {
-	result.hei = (q.hei + w.hei) / 2 + 5;
-	result.wei = (q.wei + w.wei) / 2 - 4.5;
-	return result;
+	int i, j;
+	for (i = 0; i < m - 1; i++) {
+		for (j = i + 1; j < m; j++) {
+			if (arr[i].sum < arr[j].sum) {
+				struct data tmp = arr[i]; //여기 부분
+				arr[i] = arr[j];   //멤버변수중 정수만 있는 게 아닌데
+				arr[j] = tmp;       //'=' 표시로 대입만 해줘도 복사가 된다.
+			}
+		}
+	}
 }
-void output(struct data& o)
+void output(struct data g[], int h)
 {
-	printf("height : %.0lfcm\n", floor(result.hei));
-	printf("weight : %.1lfkg\n", result.wei);
+	int i;
+	for (i = 0; i < h; i++) {
+		printf("%s %d %d %d %d\n", arr[i].name, arr[i].a, arr[i].b, arr[i].c, arr[i].sum);
+	}
 }
 int main()
 {
-	input(a, b);
-	result=sort(a, b);
-	output(result);
-
+	int n;
+	scanf("%d", &n);
+	input(arr,n);
+	sort(arr, n);
+	output(arr, n);
 	return 0;
 }
