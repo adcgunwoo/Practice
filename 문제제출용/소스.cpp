@@ -1,45 +1,14 @@
 #define _crt_no_secure_warnings
 #include <stdio.h>
-#include <math.h>
-struct data
-{
-	int a, b, c,sum;
-	char name[20];
-}arr[12];
-void input(struct data q[],int w)
-{
-	int i;
-	for (i = 0; i < w; i++) {	
-		scanf("%s %d %d %d", arr[i].name, &arr[i].a, &arr[i].b, &arr[i].c);
-		arr[i].sum = arr[i].a + arr[i].b + arr[i].c;
-	}	
-}
-void sort(struct data n[], int m)
-{
-	int i, j;
-	for (i = 0; i < m - 1; i++) {
-		for (j = i + 1; j < m; j++) {
-			if (arr[i].sum < arr[j].sum) {
-				struct data tmp = arr[i]; //여기 부분
-				arr[i] = arr[j];   //멤버변수중 정수만 있는 게 아닌데
-				arr[j] = tmp;       //'=' 표시로 대입만 해줘도 복사가 된다.
-			}
-		}
-	}
-}
-void output(struct data g[], int h)
-{
-	int i;
-	for (i = 0; i < h; i++) {
-		printf("%s %d %d %d %d\n", arr[i].name, arr[i].a, arr[i].b, arr[i].c, arr[i].sum);
-	}
-}
 int main()
 {
-	int n;
-	scanf("%d", &n);
-	input(arr,n);
-	sort(arr, n);
-	output(arr, n);
+	int a = 10;
+	int* p=&a;
+
+	printf("a = %d, &a = %p\n", a, &a); //%p는 주소를 16진수로 표시하는 서식문자다.
+	printf("*p = %d, p = %p\n", *p, p); //만약 0xxxx의 형태로 출력하려면 %#p로 작성하자.
+	//p에는 a의 주소가 저장되어 있으므로
+	// *p를 출력하면 p에 저장된 주소가
+	//가리기는 위치에 있는 값 즉,a가 출력된다.
 	return 0;
 }
