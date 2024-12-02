@@ -1,32 +1,19 @@
-#define _crt_no_secure_warnings
-#include <stdio.h>
-#include <stdlib.h>
-int main()
-{
-	int i,a[3],b[3];
-	char arr[100],brr[100];
-	int* p = a;
-	int* pi = b;
-	char* q = arr;
-	char *qi = brr;
-	for (i = 0; i < 3; i++) {	
-		scanf("%d", p + i);
-	}
-	for (i = 0; i < 3; i++) {
-		scanf("%d", pi + i);
-	}
-	scanf(" %s", q);
-	scanf(" %s", qi);
-	for (i = 0; i < 3; i++) {
-		printf("%d ", *(p + i));  //정수형은 출력할 때 *를 붙여야함
-	}
-	printf("\n");
-	for (i = 0; i < 3; i++) {
-		printf("%d ", *(pi + i));
-	}
-	printf("\n");
-	printf("%s\n", q); //문자열은 *를 붙이면 안됨
-	printf("%s\n", qi);
-
-	return 0;
-}
+/*
+-정수 출력
+% d : 10진수로 정수 출력(예 : printf("%d", 42); → 42)
+% i : % d와 동일하게 정수를 출력
+% o : 8진수로 정수 출력(예 : printf("%o", 10); → 12)
+% x : 16진수로 소문자 출력(예 : printf("%x", 255); → ff)
+% X : 16진수로 대문자 출력(예 : printf("%X", 255); → FF)
+-실수 출력
+% f : 고정소수점 형식으로 실수 출력(예 : printf("%f", 3.14); → 3.140000)
+% e : 지수 형식으로 실수 출력(예 : printf("%e", 123.456); → 1.234560e+02)
+% g : 실수 값을 적절한 형식으로 출력(예 : printf("%g", 0.0001234); → 0.0001234)
+-문자 출력
+% c : 하나의 문자를 출력(예 : printf("%c", 'A'); → A)
+-문자열 출력
+% s : 문자열을 출력(예 : printf("%s", "Hello"); → Hello)
+기타
+% p : 포인터 주소를 출력(예 : printf("%p", &x); → 0x7ffec5b38a0c 등)
+% %: % 기호 자체를 출력(예 : printf("%%"); →%)
+*/
