@@ -3,20 +3,30 @@
 #include <stdlib.h>
 int main()
 {
-	int i,a[5];
+	int i,a[3],b[3];
+	char arr[100],brr[100];
 	int* p = a;
-	
-	for (i = 0; i < 5; i++) {
-		scanf("%d", p+i);
+	int* pi = b;
+	char* q = arr;
+	char *qi = brr;
+	for (i = 0; i < 3; i++) {	
+		scanf("%d", p + i);
 	}
-	for (i = 0; i < 5; i+=2) {
-		printf("%d ", *(p+i)); //포인터에서 배열을 표시하는 방식
+	for (i = 0; i < 3; i++) {
+		scanf("%d", pi + i);
 	}
-	/*
-	for (i=0; i<5; i+=2){
-		printf("%d ",a[i]); //일반적인 배열 출력
+	scanf(" %s", q);
+	scanf(" %s", qi);
+	for (i = 0; i < 3; i++) {
+		printf("%d ", *(p + i));  //정수형은 출력할 때 *를 붙여야함
 	}
-	*/
+	printf("\n");
+	for (i = 0; i < 3; i++) {
+		printf("%d ", *(pi + i));
+	}
+	printf("\n");
+	printf("%s\n", q); //문자열은 *를 붙이면 안됨
+	printf("%s\n", qi);
 
 	return 0;
 }
