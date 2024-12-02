@@ -1,19 +1,21 @@
-/*
--정수 출력
-% d : 10진수로 정수 출력(예 : printf("%d", 42); → 42)
-% i : % d와 동일하게 정수를 출력
-% o : 8진수로 정수 출력(예 : printf("%o", 10); → 12)
-% x : 16진수로 소문자 출력(예 : printf("%x", 255); → ff)
-% X : 16진수로 대문자 출력(예 : printf("%X", 255); → FF)
--실수 출력
-% f : 고정소수점 형식으로 실수 출력(예 : printf("%f", 3.14); → 3.140000)
-% e : 지수 형식으로 실수 출력(예 : printf("%e", 123.456); → 1.234560e+02)
-% g : 실수 값을 적절한 형식으로 출력(예 : printf("%g", 0.0001234); → 0.0001234)
--문자 출력
-% c : 하나의 문자를 출력(예 : printf("%c", 'A'); → A)
--문자열 출력
-% s : 문자열을 출력(예 : printf("%s", "Hello"); → Hello)
-기타
-% p : 포인터 주소를 출력(예 : printf("%p", &x); → 0x7ffec5b38a0c 등)
-% %: % 기호 자체를 출력(예 : printf("%%"); →%)
-*/
+#define _crt_no_secure_warnings
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+	int N,i;
+	int* p;
+	/*scanf("%d",&N);
+	*int a[N];    이 주석처리된 문장들은 a의 개수를 알수가 없으므로,실행시 에러가 뜸
+	*/ 
+	scanf("%d", &N);
+	p = new int[N];
+	for (i = 0; i < N; i++) {
+		scanf("%d", p + i);
+	}
+	for (i = N - 1; i >= 0; i--) {
+		printf("%d ", *(p + i));
+	}
+	delete []p; //동적배열을 선언했기에 지워줘야함
+	return 0;   //[]이 포인터 변수 앞에 선언해야함
+}
